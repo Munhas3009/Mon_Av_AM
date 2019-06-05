@@ -24,45 +24,43 @@
     <!-- SELECT2 EXAMPLE -->
     <div class="box box-default">
         <div class="box-header with-border">
-            <h3 class="box-title"><?php echo __('Form'); ?></h3>
+            <h3 class="box-title"><?php echo __('Formulário'); ?></h3>
 
             <div class="box-tools pull-right">
                 <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
                 <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-remove"></i></button>
             </div>
-
         </div>                      
         <!-- /.box-header -->
         <!-- form start -->
         <?php echo $this->Form->create($tratamento, ['role' => 'form']); ?>
 
-       <!-- /.box-header -->
+        <!-- /.box-header -->
         <div class="box-body">
-          <div class="row">
+            <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
-                        <?php echo $this->Form->control('unidade_id', ['options' => $unidades]); ?>
+                        <?php echo $this->Form->control('unidade_id', ['options' => $unidades, 'class' => 'form-control select2', 'empty' => true]); ?>
                     </div>
 
                     <!-- /.form-group -->
                     <div class="form-group">
-                        <?php echo $this->Form->control('user_id', ['options' => $users]); ?>
+                        <?php echo $this->Form->control('user_id', ['options' => $users, 'class' => 'form-control select2', 'empty' => true]); ?>
                     </div>
                 </div>
                 <!-- /.col -->
                 <div class="col-md-6">
                     <!-- /.form-group -->
                     <div class="form-group">
-                        <?php echo $this->Form->control('especialidade_id', ['options' => $especialidades]); ?>
+                        <?php echo $this->Form->control('especialidade_id', ['options' => $especialidades, 'class' => 'form-control select2', 'empty' => true]); ?>
                     </div>
 
                     <!-- /.form-group -->
                     <div class="form-group">
-                        <?php echo $this->Form->control('paciente_id', ['options' => $pacientes]); ?>
+                        <?php echo $this->Form->control('paciente_id', ['options' => $pacientes, 'class' => 'form-control select2', 'empty' => true]); ?>
                     </div>
                 </div>
                 <!-- /.col -->
-
             </div>
             <!-- /.row -->
         </div>
@@ -75,7 +73,7 @@
 
             <div class="box box-danger">
                 <div class="box-header">
-                    <h3 class="box-title">Input masks</h3>
+                    <h3 class="box-title">Consulta</h3>
                 </div>
                 <div class="box-body">
                     <!-- Date dd/mm/yyyy -->
@@ -102,12 +100,11 @@
             <!-- /.box-body -->
         </div>
         <!--col-->
-
         <!-- /.col (left) -->
         <div class="col-md-6">
             <div class="box box-primary">
                 <div class="box-header">
-                    <h3 class="box-title">Date picker</h3>
+                    <h3 class="box-title">Info</h3>
                 </div>
                 <div class="box-body">
                     <!-- Date -->
@@ -132,8 +129,7 @@
         <!--col-->
     </div>
     <!--row-->
-   <?php echo $this->Form->submit(__('Salvar'), ['class' => 'btn btn-primary']); ?>
-
+    <?php echo $this->Form->submit(__('Salvar'), ['class' => 'btn btn-primary']); ?>
     <?php echo $this->Form->end(); ?>
 </section>
 
@@ -168,7 +164,14 @@
 <?php echo $this->Html->script('AdminLTE./plugins/timepicker/bootstrap-timepicker.min', ['block' => 'script']); ?>
 <!-- iCheck 1.0.1 -->
 <?php echo $this->Html->script('AdminLTE./plugins/iCheck/icheck.min', ['block' => 'script']); ?>
+<!-- FastClick -->
+<?php echo $this->Html->script('AdminLTE./bower_components/fastclick/lib/fastclick', ['block' => 'script']); ?>
+<!-- AdminLTE App -->
+<?php echo $this->Html->script('AdminLTE./dist/js/adminlte.min', ['block' => 'script']); ?>
+<!-- AdminLTE for demo purposes -->
+<?php echo $this->Html->script('AdminLTE./dist/js/demo', ['block' => 'script']); ?>
 
+<!-- Page script -->
 <?php $this->start('scriptBottom'); ?>
 <script>
     $(function () {
