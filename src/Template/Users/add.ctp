@@ -10,7 +10,7 @@
         Utilizador
         <small>
             <?php echo __(''); ?>
-            <i class="fa fa-plus-circle"></i>
+            <i class="fa fa-user-plus"></i>
         </small>
     </h1>
     <ol class="breadcrumb">

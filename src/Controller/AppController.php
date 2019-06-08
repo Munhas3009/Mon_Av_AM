@@ -85,11 +85,11 @@ class AppController extends Controller {
     }
 
     public function IsAuthorized($user) {
-        if (isset($user['role_id']) && $user['role_id'] === 3) {
+        if (isset($user['role_id']) && $user['role_id'] === 1) {
             //$this->redirect(['controller' => 'users', 'action' => 'add']);
             return true;
         }
-        return true;
+        return false;
     }
 
 }

@@ -2,8 +2,12 @@
 <section class="content-header">
   <h1>
     Campanhas
+    <small>
+            <?php echo __(''); ?>
+            <i class="fa fa-list"></i>
+        </small>
 
-    <div class="pull-right"><?php echo $this->Html->link(__('New'), ['action' => 'add'], ['class'=>'btn btn-success btn-xs']) ?></div>
+    <div class="pull-right"><?php echo $this->Html->link(__('Adicionar'), ['action' => 'add'], ['class'=>'btn btn-success btn-xs']) ?></div>
   </h1>
 </section>
 
@@ -13,10 +17,10 @@
     <div class="col-xs-12">
       <div class="box">
         <div class="box-header">
-          <h3 class="box-title"><?php echo __('List'); ?></h3>
+          <h3 class="box-title"><?php echo __('Lista'); ?></h3>
 
           <div class="box-tools">
-            <form action="<?php echo $this->Url->build(); ?>" method="POST">
+<!--            <form action="<?php echo $this->Url->build(); ?>" method="POST">
               <div class="input-group input-group-sm" style="width: 150px;">
                 <input type="text" name="table_search" class="form-control pull-right" placeholder="<?php echo __('Search'); ?>">
 
@@ -24,27 +28,28 @@
                   <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
                 </div>
               </div>
-            </form>
+            </form>-->
           </div>
         </div>
         <!-- /.box-header -->
         <div class="box-body table-responsive no-padding">
-          <table class="table table-hover">
+          
+             <table id="example2" class="table table-bordered table-hover">
             <thead>
               <tr>
                   <th scope="col"><?= $this->Paginator->sort('id') ?></th>
-                  <th scope="col"><?= $this->Paginator->sort('unidade_id') ?></th>
-                  <th scope="col"><?= $this->Paginator->sort('user_id') ?></th>
-                  <th scope="col"><?= $this->Paginator->sort('desc_campanha') ?></th>
-                  <th scope="col"><?= $this->Paginator->sort('dose') ?></th>
-                  <th scope="col"><?= $this->Paginator->sort('unidade_sanitaria') ?></th>
-                  <th scope="col"><?= $this->Paginator->sort('brigada_movel') ?></th>
-                  <th scope="col"><?= $this->Paginator->sort('agente_comun_saude') ?></th>
+                  <th scope="col"><?= $this->Paginator->sort('US') ?></th>
+                  <th scope="col"><?= $this->Paginator->sort('Utilizador') ?></th>
+                  <th scope="col"><?= $this->Paginator->sort('Descrição') ?></th>
+                  <th scope="col"><?= $this->Paginator->sort('Nº de dose') ?></th>
+                  <th scope="col"><?= $this->Paginator->sort('Aplicada na US') ?></th>
+                  <th scope="col"><?= $this->Paginator->sort('Aplicada por BM') ?></th>
+                  <th scope="col"><?= $this->Paginator->sort('Aplicada por ACS') ?></th>
                   <th scope="col"><?= $this->Paginator->sort('interv_idade') ?></th>
                   <th scope="col"><?= $this->Paginator->sort('mulheres_p_parto') ?></th>
-                  <th scope="col"><?= $this->Paginator->sort('created') ?></th>
-                  <th scope="col"><?= $this->Paginator->sort('modified') ?></th>
-                  <th scope="col" class="actions text-center"><?= __('Actions') ?></th>
+                  <th scope="col"><?= $this->Paginator->sort('Criado') ?></th>
+                  <th scope="col"><?= $this->Paginator->sort('Actualizado') ?></th>
+                  <th scope="col" class="actions text-center"><?= __('Acções') ?></th>
               </tr>
             </thead>
             <tbody>
@@ -62,10 +67,11 @@
                   <td><?= $this->Number->format($campanha->mulheres_p_parto) ?></td>
                   <td><?= h($campanha->created) ?></td>
                   <td><?= h($campanha->modified) ?></td>
-                  <td class="actions text-right">
-                      <?= $this->Html->link(__('View'), ['action' => 'view', $campanha->id], ['class'=>'btn btn-info btn-xs']) ?>
-                      <?= $this->Html->link(__('Edit'), ['action' => 'edit', $campanha->id], ['class'=>'btn btn-warning btn-xs']) ?>
-                      <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $campanha->id], ['confirm' => __('Are you sure you want to delete # {0}?', $campanha->id), 'class'=>'btn btn-danger btn-xs']) ?>
+                  <td class="actions text-center">
+                      <?= $this->Html->link(__(''), ['action' => 'view', $campanha->id], ['class'=>'btn btn-info btn-xs', 'class' => 'fa fa-eye']) ?>
+                      <?= $this->Html->link(__(''), ['action' => 'edit', $campanha->id], ['class'=>'btn btn-warning btn-xs', 'class' => 'fa fa-edit']) ?>
+                      <?= $this->Form->postLink(__(''), ['action' => 'delete', $campanha->id], ['confirm' => __('Are you sure you want to delete # {0}?', $campanha->id)
+                          , 'class'=>'btn btn-danger btn-xs', 'class' => 'fa fa-trash-o']) ?>
                   </td>
                 </tr>
               <?php endforeach; ?>
@@ -78,3 +84,26 @@
     </div>
   </div>
 </section>
+
+<!-- DataTables -->
+<?php echo $this->Html->css('AdminLTE./bower_components/datatables.net-bs/css/dataTables.bootstrap.min', ['block' => 'css']); ?>
+
+<!-- DataTables -->
+<?php echo $this->Html->script('AdminLTE./bower_components/datatables.net/js/jquery.dataTables.min', ['block' => 'script']); ?>
+<?php echo $this->Html->script('AdminLTE./bower_components/datatables.net-bs/js/dataTables.bootstrap.min', ['block' => 'script']); ?>
+
+<?php $this->start('scriptBottom'); ?>
+<script>
+    $(function () {
+        $('#example1').DataTable()
+        $('#example2').DataTable({
+            'paging': true,
+            'lengthChange': false,
+            'searching': true,
+            'ordering': true,
+            'info': true,
+            'autoWidth': false
+        })
+    })
+</script>
+<?php $this->end(); ?>

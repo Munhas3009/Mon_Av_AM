@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Model\Table;
 
 use Cake\ORM\Query;
@@ -26,16 +27,15 @@ use Cake\Validation\Validator;
  *
  * @mixin \Cake\ORM\Behavior\TimestampBehavior
  */
-class TratamentosTable extends Table
-{
+class TratamentosTable extends Table {
+
     /**
      * Initialize method
      *
      * @param array $config The configuration for the Table.
      * @return void
      */
-    public function initialize(array $config)
-    {
+    public function initialize(array $config) {
         parent::initialize($config);
 
         $this->setTable('tratamentos');
@@ -71,37 +71,36 @@ class TratamentosTable extends Table
      * @param \Cake\Validation\Validator $validator Validator instance.
      * @return \Cake\Validation\Validator
      */
-    public function validationDefault(Validator $validator)
-    {
+    public function validationDefault(Validator $validator) {
         $validator
-            ->nonNegativeInteger('id')
-            ->allowEmptyString('id', 'create');
+                ->nonNegativeInteger('id')
+                ->allowEmptyString('id', 'create');
 
         $validator
-            ->integer('contador')
-            ->requirePresence('contador', 'create')
-            ->allowEmptyString('contador', false);
+                ->integer('contador')
+                ->requirePresence('contador', 'create')
+                ->allowEmptyString('contador', false);
 
         $validator
-            ->scalar('estado')
-            ->maxLength('estado', 255)
-            ->requirePresence('estado', 'create')
-            ->allowEmptyString('estado', false);
+                ->scalar('estado')
+                ->maxLength('estado', 255)
+                ->requirePresence('estado', 'create')
+                ->allowEmptyString('estado', false);
 
         $validator
-            ->scalar('tratamento')
-            ->maxLength('tratamento', 255)
-            ->allowEmptyString('tratamento');
+                ->scalar('tratamento')
+                ->maxLength('tratamento', 255)
+                ->allowEmptyString('tratamento');
 
         $validator
-            ->scalar('svacinacao')
-            ->maxLength('svacinacao', 255)
-            ->allowEmptyString('svacinacao');
+                ->scalar('svacinacao')
+                ->maxLength('svacinacao', 255)
+                ->allowEmptyString('svacinacao');
 
         $validator
-            ->scalar('obs')
-            ->maxLength('obs', 255)
-            ->allowEmptyString('obs');
+                ->scalar('obs')
+                ->maxLength('obs', 255)
+                ->allowEmptyString('obs');
 
         return $validator;
     }
@@ -113,8 +112,7 @@ class TratamentosTable extends Table
      * @param \Cake\ORM\RulesChecker $rules The rules object to be modified.
      * @return \Cake\ORM\RulesChecker
      */
-    public function buildRules(RulesChecker $rules)
-    {
+    public function buildRules(RulesChecker $rules) {
         $rules->add($rules->existsIn(['unidade_id'], 'Unidades'));
         $rules->add($rules->existsIn(['user_id'], 'Users'));
         $rules->add($rules->existsIn(['especialidade_id'], 'Especialidades'));
@@ -123,4 +121,9 @@ class TratamentosTable extends Table
 
         return $rules;
     }
+
+    public function isOwnedBy($tratamentoId, $userId) {
+        return $this->exists(['id' => $tratamentoId, 'user_id' => $userId]);
+    }
+
 }

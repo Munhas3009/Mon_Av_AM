@@ -27,6 +27,7 @@
       </span>
     </a>
   </li>
+  
   <li>
     <a href="<?php echo $this->Url->build('/pages/mailbox/mailbox'); ?>">
       <i class="fa fa-envelope"></i> <span>Correio</span>
@@ -38,7 +39,6 @@
     </a>
   </li>
 
-  </li>
   <li><a href="https://adminlte.io/docs"><i class="fa fa-book"></i> <span>Documentação</span></a></li>
   <li class="header">LABELS</li>
 
