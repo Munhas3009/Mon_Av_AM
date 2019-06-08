@@ -25,7 +25,7 @@
         </a>
         <ul class="treeview-menu">
             <li><a href="<?php echo $this->Url->build('/us/campanhas/add'); ?>"><i class="fa fa-circle-o"></i> Registar</a></li>
-            <li><a href="<?php echo $this->Url->build('/us/campanhas/index'); ?>"><i class="fa fa-circle-o"></i> Todas </a></li>
+            <li><a href="<?php echo $this->Url->build('/us/campanhas'); ?>"><i class="fa fa-circle-o"></i> Todas </a></li>
 
         </ul>
     </li>
@@ -39,7 +39,7 @@
         </a>
         <ul class="treeview-menu">
             <li><a href="<?php echo $this->Url->build('/us/diagnosticos/add'); ?>"><i class="fa fa-circle-o"></i> Registar </a></li>
-            <li><a href="<?php echo $this->Url->build('/us/diagnosticos/index'); ?>"><i class="fa fa-circle-o"></i> Todos </a></li>
+            <li><a href="<?php echo $this->Url->build('/us/diagnosticos'); ?>"><i class="fa fa-circle-o"></i> Todos </a></li>
         </ul>
     </li>
 
@@ -52,7 +52,7 @@
         </a>
         <ul class="treeview-menu">
             <li><a href="<?php echo $this->Url->build('/us/pacientes/add'); ?>"><i class="fa fa-circle-o"></i> Registar </a></li>
-            <li><a href="<?php echo $this->Url->build('/us/pacientes/index'); ?>"><i class="fa fa-circle-o"></i> Todos </a></li>
+            <li><a href="<?php echo $this->Url->build('/us/pacientes'); ?>"><i class="fa fa-circle-o"></i> Todos </a></li>
 
         </ul>
     </li>

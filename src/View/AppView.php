@@ -38,6 +38,7 @@ class AppView extends View {
     public function initialize() {
         //Enable Form
         $this->loadHelper('Form', ['className' => 'AdminLTE.Form']);
+        $this->loadHelper('CakeCharts.DrawChart');
     }
 
 }

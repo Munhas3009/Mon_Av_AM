@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CakePHP(tm) : Rapid Development Framework (https://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
@@ -12,6 +13,7 @@
  * @since     3.3.0
  * @license   https://opensource.org/licenses/mit-license.php MIT License
  */
+
 namespace App;
 
 use Cake\Core\Configure;
@@ -27,13 +29,18 @@ use Cake\Routing\Middleware\RoutingMiddleware;
  * This defines the bootstrapping logic and middleware layers you
  * want to use in your application.
  */
-class Application extends BaseApplication
-{
+class Application extends BaseApplication {
+
     /**
      * {@inheritDoc}
      */
-    public function bootstrap()
-    {
+    public function bootstrap() {
+        $this->addPlugin('CsvView');
+
+        $this->addPlugin('CakePdf', ['bootstrap' => true]);
+
+        $this->addPlugin('CakeCharts', ['autoload' => true]);
+
         $this->addPlugin('AdminLTE');
 
         // Call parent to load bootstrap from files.
@@ -64,24 +71,24 @@ class Application extends BaseApplication
      * @param \Cake\Http\MiddlewareQueue $middlewareQueue The middleware queue to setup.
      * @return \Cake\Http\MiddlewareQueue The updated middleware queue.
      */
-    public function middleware($middlewareQueue)
-    {
+    public function middleware($middlewareQueue) {
         $middlewareQueue
-            // Catch any exceptions in the lower layers,
-            // and make an error page/response
-            ->add(new ErrorHandlerMiddleware(null, Configure::read('Error')))
+                // Catch any exceptions in the lower layers,
+                // and make an error page/response
+                ->add(new ErrorHandlerMiddleware(null, Configure::read('Error')))
 
-            // Handle plugin/theme assets like CakePHP normally does.
-            ->add(new AssetMiddleware([
-                'cacheTime' => Configure::read('Asset.cacheTime')
-            ]))
+                // Handle plugin/theme assets like CakePHP normally does.
+                ->add(new AssetMiddleware([
+                    'cacheTime' => Configure::read('Asset.cacheTime')
+                ]))
 
-            // Add routing middleware.
-            // Routes collection cache enabled by default, to disable route caching
-            // pass null as cacheConfig, example: `new RoutingMiddleware($this)`
-            // you might want to disable this cache in case your routing is extremely simple
-            ->add(new RoutingMiddleware($this, '_cake_routes_'));
+                // Add routing middleware.
+                // Routes collection cache enabled by default, to disable route caching
+                // pass null as cacheConfig, example: `new RoutingMiddleware($this)`
+                // you might want to disable this cache in case your routing is extremely simple
+                ->add(new RoutingMiddleware($this, '_cake_routes_'));
 
         return $middlewareQueue;
     }
+
 }

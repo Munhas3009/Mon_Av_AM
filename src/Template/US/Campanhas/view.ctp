@@ -46,7 +46,7 @@
                         <dd><?= $this->Number->format($campanha->agente_comun_saude) ?></dd>
                         <dt scope="row"><?= __('Quantidade admin a MPP') ?></dt>
                         <dd><?= $this->Number->format($campanha->mulheres_p_parto) ?></dd>
-                        <dt scope="row"><?= __('Criado') ?></dt>
+                        <dt scope="row"><?= __('Registado') ?></dt>
                         <dd><?= h($campanha->created) ?></dd>
                         <dt scope="row"><?= __('Actualizado') ?></dt>
                         <dd><?= h($campanha->modified) ?></dd>

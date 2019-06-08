@@ -87,10 +87,22 @@
     <div class="row">
         <div class="col-md-12">
             <div class="box box-solid">
+
                 <div class="box-header with-border">
-                    <i class="fa fa-share-alt"></i>
-                    <h3 class="box-title"><?= __('Campanhas') ?></h3>
+
+                    <!-- Content Header (Page header) -->
+                    <section class="content-header">
+                        <i class="fa fa-share-alt"></i>                        
+                        <h3 class="box-title"><?= __('Campanhas') ?></h3>
+
+                         <ol class="breadcrumb">
+                            <li><a href="<?php echo $this->Url->build(['action' => 'index']); ?>"><i class="fa fa-dashboard"></i> Home</a></li>
+                            <li class="active">Campanhas da US</li>
+                            <li><a href="<?php echo $this->Url->build(['action' => 'campanhas']); ?>"><i class="fa fa-download"></i>Excel</a></li>
+                        </ol>
+                    </section>
                 </div>
+
                 <!-- /.box-header -->
                 <div class="box-body">
                     <?php if (!empty($unidade->campanhas)): ?>
@@ -146,8 +158,19 @@
         <div class="col-md-12">
             <div class="box box-solid">
                 <div class="box-header with-border">
-                    <i class="fa fa-share-alt"></i>
-                    <h3 class="box-title"><?= __('Tratamentos') ?></h3>
+
+                    <!-- Content Header (Page header) -->
+                    <section class="content-header">
+                        <i class="fa fa-share-alt"></i>
+                        <h3 class="box-title"><?= __('Tratamentos') ?></h3>
+
+                        <ol class="breadcrumb">
+                            <li><a href="<?php echo $this->Url->build(['action' => 'index']); ?>"><i class="fa fa-dashboard"></i> Home</a></li>
+                            <li class="active">Tratamentos da US</li>
+                            <li><a href="<?php echo $this->Url->build(['action' => 'tratamentos']); ?>"><i class="fa fa-download"></i>Excel</a></li>
+                        </ol>
+                    </section>
+
                 </div>
                 <!-- /.box-header -->
                 <div class="box-body">
@@ -158,7 +181,7 @@
                                 <tr>
                                     <th scope="col" class="actions text-center"><?= __('Id') ?></th>
                                     <!--<th scope="col"><?= __('Unidade Id') ?></th>-->
-                                    <th scope="col" class="actions text-center"><?= __('Médico') ?></th>
+                                    <!--<th scope="col" class="actions text-center"><?= __('Médico') ?></th>-->
                                     <th scope="col" class="actions text-center"><?= __('Especialidade') ?></th>
                                     <!--<th scope="col"><?= __('Paciente Id') ?></th>-->
                                     <!--<th scope="col"><?= __('Contador') ?></th>-->
@@ -176,7 +199,7 @@
                                 <tr>
                                     <td><?= h($tratamentos->id) ?></td>
                                     <!--<td><?= h($tratamentos->unidade_id) ?></td>-->
-                                    <td><?= h($tratamentos->user_id) ?></td>
+                                    <!--<td><?= h($tratamentos->user_id) ?></td>-->
                                     <td><?= h($tratamentos->especialidade_id) ?></td>
                                     <!--<td><?= h($tratamentos->paciente_id) ?></td>-->
                                     <!--<td><?= h($tratamentos->contador) ?></td>-->

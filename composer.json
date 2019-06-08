@@ -10,6 +10,8 @@
         "cakephp/migrations": "^2.0.0",
         "cakephp/plugin-installer": "^1.0",
         "friendsofcake/cakepdf": "^3.5",
+        "friendsofcake/cakephp-csvview": "^3.3",
+        "jtraulle/cake-charts": "^1.1",
         "maiconpinto/cakephp-adminlte-theme": "^1.1",
         "mobiledetect/mobiledetectlib": "2.*"
     },

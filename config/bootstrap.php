@@ -202,3 +202,17 @@ Type::build('timestamp')
 //Inflector::rules('uninflected', ['dontinflectme']);
 //Inflector::rules('transliteration', ['/å/' => 'aa']);
 Configure::load('adminlte', 'default');
+Configure::write('CakePdf', [
+    'engine' => [
+        'className' => 'CakePdf.Dompdf',
+        'options' => [
+            'print-media-type' => false,
+            'outline' => true,
+            'dpi' => 96
+        ]
+    ],
+    'pageSize' => 'Letter',
+]);
+define('DOMPDF_ENABLE_AUTOLOAD', false);
+define('DOMPDF_ENABLE_HTML5PARSER', true);
+define('DOMPDF_ENABLE_REMOTE', true);

@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Controller\US;
 
 use App\Controller\AppController;
@@ -10,15 +11,14 @@ use App\Controller\AppController;
  *
  * @method \App\Model\Entity\Campanha[]|\Cake\Datasource\ResultSetInterface paginate($object = null, array $settings = [])
  */
-class CampanhasController extends AppController
-{
+class CampanhasController extends AppController {
+
     /**
      * Index method
      *
      * @return \Cake\Http\Response|void
      */
-    public function index()
-    {
+    public function index() {
         $this->paginate = [
             'contain' => ['Unidades', 'Users']
         ];
@@ -34,8 +34,7 @@ class CampanhasController extends AppController
      * @return \Cake\Http\Response|void
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
-    public function view($id = null)
-    {
+    public function view($id = null) {
         $campanha = $this->Campanhas->get($id, [
             'contain' => ['Unidades', 'Users']
         ]);
@@ -43,14 +42,12 @@ class CampanhasController extends AppController
         $this->set('campanha', $campanha);
     }
 
-
     /**
      * Add method
      *
      * @return \Cake\Http\Response|null Redirects on successful add, renders view otherwise.
      */
-    public function add()
-    {
+    public function add() {
         $campanha = $this->Campanhas->newEntity();
         if ($this->request->is('post')) {
             $campanha = $this->Campanhas->patchEntity($campanha, $this->request->getData());
@@ -66,7 +63,6 @@ class CampanhasController extends AppController
         $this->set(compact('campanha', 'unidades', 'users'));
     }
 
-
     /**
      * Edit method
      *
@@ -74,8 +70,7 @@ class CampanhasController extends AppController
      * @return \Cake\Http\Response|null Redirects on successful edit, renders view otherwise.
      * @throws \Cake\Network\Exception\NotFoundException When record not found.
      */
-    public function edit($id = null)
-    {
+    public function edit($id = null) {
         $campanha = $this->Campanhas->get($id, [
             'contain' => []
         ]);
@@ -93,7 +88,6 @@ class CampanhasController extends AppController
         $this->set(compact('campanha', 'unidades', 'users'));
     }
 
-
     /**
      * Delete method
      *
@@ -101,8 +95,7 @@ class CampanhasController extends AppController
      * @return \Cake\Http\Response|null Redirects to index.
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
-    public function delete($id = null)
-    {
+    public function delete($id = null) {
         $this->request->allowMethod(['post', 'delete']);
         $campanha = $this->Campanhas->get($id);
         if ($this->Campanhas->delete($campanha)) {
@@ -113,4 +106,26 @@ class CampanhasController extends AppController
 
         return $this->redirect(['action' => 'index']);
     }
+
+    /**
+     * Export method
+     *
+     * @param string|null $id Campanha id.
+     * @return \Cake\Http\Response|null Redirects on successful edit, renders view otherwise.
+     * @throws \Cake\Network\Exception\NotFoundException When record not found.
+     */
+    public function export() {
+        
+        $this->setResponse($this->getResponse()->withDownload('campanhas.csv'));
+
+        $_header = array('ID', 'US', 'Utilizador', 'Descricao', 'Nº de dose', 'Aplicada na US', 'Aplicada por BM',
+            'Aplicada por ACS', 'Interv_idade', 'Mulheres pos parto', 'Comentario','Registado', 'Actualizado');
+        
+        $data = $this->Campanhas->find('all');
+        $_serialize = 'data';
+
+        $this->viewBuilder()->setClassName('CsvView.Csv');
+        $this->set(compact( 'data', '_header','_serialize'));
+    }
+
 }
