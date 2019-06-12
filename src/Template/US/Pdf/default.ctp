@@ -14,7 +14,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
             <?= $this->fetch('title') ?>
         </title>
 
-        <?= $this->Html->meta('icon'), ['fullBase' => true]?>
+        <?= $this->Html->meta('icon') ?>
         <?= $this->Html->css('base.css', ['fullBase' => true]) ?>
         <?= $this->Html->css('cake.css', ['fullBase' => true]) ?>
         <?= $this->Html->css('home.css', ['fullBase' => true]) ?>
@@ -23,7 +23,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
     <body class="home">
 
         <header class="row">
-            <div class="header-image"><?= $this->Html->image('./cake.logo.svg') ?></div>
+            <div class="header-image"><?= $this->Html->image('cake.logo.svg') ?></div>
             <div class="header-title">
                 <h1>Welcome to CakePHP <?= Configure::version() ?> Red Velvet. Build fast. Grow solid.</h1>
             </div>

@@ -7,7 +7,7 @@
 <!-- Content Header (Page header) -->
 <section class="content-header">
     <h1>
-        Tratamento
+        Consulta
         <small>
             <?php echo __(''); ?>
             <i class="fa fa-edit"></i>
@@ -91,7 +91,8 @@
                     </div>
                     <!-- /.form group -->
                     <div class="form-group">
-                        <?php echo $this->Form->control('diagnostico_id', ['options' => $diagnosticos, 'empty' => true]); ?>
+                        <?php echo $this->Form->control('diagnostico_id', ['options' => $diagnosticos, 'empty' => true,
+						'class'=>'form-control select2']); ?>
 
                     </div>
                     <!-- /.form group -->

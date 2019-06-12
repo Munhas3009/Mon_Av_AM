@@ -162,7 +162,7 @@
                     <!-- Content Header (Page header) -->
                     <section class="content-header">
                         <i class="fa fa-share-alt"></i>
-                        <h3 class="box-title"><?= __('Tratamentos') ?></h3>
+                        <h3 class="box-title"><?= __('Consultas') ?></h3>
 
                         <ol class="breadcrumb">
                             <li><a href="<?php echo $this->Url->build(['action' => 'index']); ?>"><i class="fa fa-dashboard"></i> Home</a></li>

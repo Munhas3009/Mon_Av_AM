@@ -52,11 +52,11 @@ class UnidadesController extends AppController {
         if ($this->request->is('post')) {
             $unidade = $this->Unidades->patchEntity($unidade, $this->request->getData());
             if ($this->Unidades->save($unidade)) {
-                $this->Flash->success(__('The {0} has been saved.', 'Unidade'));
+                $this->Flash->success(__('A {0} foi registada com sucesso.', 'Unidade'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The {0} could not be saved. Please, try again.', 'Unidade'));
+            $this->Flash->error(__('A {0} não foi registada. Por favor, tente novamente.', 'Unidade'));
         }
         $classificacaos = $this->Unidades->Classificacaos->find('list', ['limit' => 200]);
         $distritos = $this->Unidades->Distritos->find('list', ['limit' => 200]);
@@ -77,11 +77,11 @@ class UnidadesController extends AppController {
         if ($this->request->is(['patch', 'post', 'put'])) {
             $unidade = $this->Unidades->patchEntity($unidade, $this->request->getData());
             if ($this->Unidades->save($unidade)) {
-                $this->Flash->success(__('The {0} has been saved.', 'Unidade'));
+                $this->Flash->success(__('A {0} foi actualizada com sucesso.', 'Unidade'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The {0} could not be saved. Please, try again.', 'Unidade'));
+            $this->Flash->error(__('A {0} não foi actualizada. Por favor, tente novamente.', 'Unidade'));
         }
         $classificacaos = $this->Unidades->Classificacaos->find('list', ['limit' => 200]);
         $distritos = $this->Unidades->Distritos->find('list', ['limit' => 200]);
@@ -99,9 +99,9 @@ class UnidadesController extends AppController {
         $this->request->allowMethod(['post', 'delete']);
         $unidade = $this->Unidades->get($id);
         if ($this->Unidades->delete($unidade)) {
-            $this->Flash->success(__('The {0} has been deleted.', 'Unidade'));
+            $this->Flash->success(__('A {0} foi removida.', 'Unidade'));
         } else {
-            $this->Flash->error(__('The {0} could not be deleted. Please, try again.', 'Unidade'));
+            $this->Flash->error(__('A {0} não foi removida. Por favor, tente novamente.', 'Unidade'));
         }
 
         return $this->redirect(['action' => 'index']);
@@ -131,7 +131,7 @@ class UnidadesController extends AppController {
     /**
      * Tratamentos method
      *
-     * @param string|null $id Campanha id.
+     * @param string|null $id Tratamento id.
      * @return \Cake\Http\Response|null Redirects on successful edit, renders view otherwise.
      * @throws \Cake\Network\Exception\NotFoundException When record not found.
      */

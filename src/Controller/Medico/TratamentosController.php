@@ -60,7 +60,7 @@ class TratamentosController extends AppController {
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('O {0} não foi registado. Por favor, tente de novo.', 'Tratamento'));
+            $this->Flash->error(__('O {0} não foi registado. Por favor, tente novamente.', 'Tratamento'));
         }
         $unidades = $this->Tratamentos->Unidades->find('list', ['limit' => 200]);
         $users = $this->Tratamentos->Users->find('list', ['limit' => 200]);
@@ -88,7 +88,7 @@ class TratamentosController extends AppController {
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('O {0} não foi actualizado. Por favor, tente de novo.', 'Tratamento'));
+            $this->Flash->error(__('O {0} não foi actualizado. Por favor, tente novamente.', 'Tratamento'));
         }
         $unidades = $this->Tratamentos->Unidades->find('list', ['limit' => 200]);
         $users = $this->Tratamentos->Users->find('list', ['limit' => 200]);
@@ -111,7 +111,7 @@ class TratamentosController extends AppController {
         if ($this->Tratamentos->delete($tratamento)) {
             $this->Flash->success(__('O {0} foi removido.', 'Tratamento'));
         } else {
-            $this->Flash->error(__('O {0} não pode ser removido. Por favor, tentar de novo.', 'Tratamento'));
+            $this->Flash->error(__('O {0} não foi removido. Por favor, tente novamente.', 'Tratamento'));
         }
 
         return $this->redirect(['action' => 'index']);

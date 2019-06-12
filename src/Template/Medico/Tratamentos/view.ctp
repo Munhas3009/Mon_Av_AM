@@ -1,6 +1,6 @@
 <section class="content-header">
   <h1>
-    Tratamento
+    Consulta
     <small><?php echo __('View'); ?></small>
   </h1>
   <ol class="breadcrumb">

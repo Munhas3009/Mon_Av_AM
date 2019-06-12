@@ -202,9 +202,13 @@ Type::build('timestamp')
 //Inflector::rules('uninflected', ['dontinflectme']);
 //Inflector::rules('transliteration', ['/å/' => 'aa']);
 Configure::load('adminlte', 'default');
+
+//configuracoes do nosso cakepdf
 Configure::write('CakePdf', [
     'engine' => [
-        'className' => 'CakePdf.Dompdf',
+        'className' => 'CakePdf.WkHtmlToPdf',
+        //'binary' => '/usr/bin/wkhtmltopdf', //LINUX
+        'binary' => 'C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe', //WINDOWS
         'options' => [
             'print-media-type' => false,
             'outline' => true,
@@ -213,6 +217,3 @@ Configure::write('CakePdf', [
     ],
     'pageSize' => 'Letter',
 ]);
-define('DOMPDF_ENABLE_AUTOLOAD', false);
-define('DOMPDF_ENABLE_HTML5PARSER', true);
-define('DOMPDF_ENABLE_REMOTE', true);

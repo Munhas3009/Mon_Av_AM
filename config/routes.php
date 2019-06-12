@@ -123,8 +123,9 @@ Router::prefix('us', function ($routes) {
 //rota do nosso pdf
 Router::extensions(['pdf']);
 
-////para baixar e abrir a stream do pdf
-//Router::scope('/pdf_download/:id', function (RouteBuilder $routes) {
-//    $routes->addExtensions(['pdf']);
-//    $routes->connect('/', ['controller' => 'Pages', 'action' => 'cakePdfDownload']);
-//});
+//para baixar e abrir a stream do pdf
+Router::scope('/pdf_download/:id', function (RouteBuilder $routes) {
+    $routes->addExtensions(['pdf']);
+    $routes->connect('/', ['controller' => 'Pages', 'action' => 'cakePdfDownload']);
+    $routes->connect('/', ['controller' => 'US/Diagnosticos', 'action' => 'cakePdfDownload']);
+});

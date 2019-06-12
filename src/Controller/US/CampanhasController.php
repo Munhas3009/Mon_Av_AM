@@ -52,11 +52,11 @@ class CampanhasController extends AppController {
         if ($this->request->is('post')) {
             $campanha = $this->Campanhas->patchEntity($campanha, $this->request->getData());
             if ($this->Campanhas->save($campanha)) {
-                $this->Flash->success(__('The {0} has been saved.', 'Campanha'));
+                $this->Flash->success(__('A {0} foi registada com sucesso.', 'Campanha'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The {0} could not be saved. Please, try again.', 'Campanha'));
+            $this->Flash->error(__('A {0} não foi registada. Por favor, tente novamente.', 'Campanha'));
         }
         $unidades = $this->Campanhas->Unidades->find('list', ['limit' => 200]);
         $users = $this->Campanhas->Users->find('list', ['limit' => 200]);
@@ -77,11 +77,11 @@ class CampanhasController extends AppController {
         if ($this->request->is(['patch', 'post', 'put'])) {
             $campanha = $this->Campanhas->patchEntity($campanha, $this->request->getData());
             if ($this->Campanhas->save($campanha)) {
-                $this->Flash->success(__('The {0} has been saved.', 'Campanha'));
+                $this->Flash->success(__('A {0} foi actualizada com sucesso.', 'Campanha'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The {0} could not be saved. Please, try again.', 'Campanha'));
+            $this->Flash->error(__('A {0} não foi actualizada. Por favor, tente novamente.', 'Campanha'));
         }
         $unidades = $this->Campanhas->Unidades->find('list', ['limit' => 200]);
         $users = $this->Campanhas->Users->find('list', ['limit' => 200]);
@@ -99,9 +99,9 @@ class CampanhasController extends AppController {
         $this->request->allowMethod(['post', 'delete']);
         $campanha = $this->Campanhas->get($id);
         if ($this->Campanhas->delete($campanha)) {
-            $this->Flash->success(__('The {0} has been deleted.', 'Campanha'));
+            $this->Flash->success(__('A {0} foi removida.', 'Campanha'));
         } else {
-            $this->Flash->error(__('The {0} could not be deleted. Please, try again.', 'Campanha'));
+            $this->Flash->error(__('A {0} não foi removida. Por favor, tente novamente.', 'Campanha'));
         }
 
         return $this->redirect(['action' => 'index']);

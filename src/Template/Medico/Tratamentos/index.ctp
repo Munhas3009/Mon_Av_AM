@@ -1,7 +1,7 @@
 <!-- Content Header (Page header) -->
 <section class="content-header">
   <h1>
-    Tratamentos
+    Consultas
     <small>
             <?php echo __(''); ?>
             <i class="fa fa-medkit"></i>

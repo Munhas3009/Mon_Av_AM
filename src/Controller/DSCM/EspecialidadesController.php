@@ -52,11 +52,11 @@ class EspecialidadesController extends AppController
         if ($this->request->is('post')) {
             $especialidade = $this->Especialidades->patchEntity($especialidade, $this->request->getData());
             if ($this->Especialidades->save($especialidade)) {
-                $this->Flash->success(__('The {0} has been saved.', 'Especialidade'));
+                $this->Flash->success(__('A {0} foi registada com sucesso.', 'Especialidade'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The {0} could not be saved. Please, try again.', 'Especialidade'));
+            $this->Flash->error(__('A {0} não foi registda. Por favor, tente novamente.', 'Especialidade'));
         }
         $this->set(compact('especialidade'));
     }
@@ -77,11 +77,11 @@ class EspecialidadesController extends AppController
         if ($this->request->is(['patch', 'post', 'put'])) {
             $especialidade = $this->Especialidades->patchEntity($especialidade, $this->request->getData());
             if ($this->Especialidades->save($especialidade)) {
-                $this->Flash->success(__('The {0} has been saved.', 'Especialidade'));
+                $this->Flash->success(__('A {0} foi actualizado com sucesso.', 'Especialidade'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The {0} could not be saved. Please, try again.', 'Especialidade'));
+            $this->Flash->error(__('A {0} não foi actualizado. Por favor, tente novamente.', 'Especialidade'));
         }
         $this->set(compact('especialidade'));
     }
@@ -99,9 +99,9 @@ class EspecialidadesController extends AppController
         $this->request->allowMethod(['post', 'delete']);
         $especialidade = $this->Especialidades->get($id);
         if ($this->Especialidades->delete($especialidade)) {
-            $this->Flash->success(__('The {0} has been deleted.', 'Especialidade'));
+            $this->Flash->success(__('A {0} foi removida.', 'Especialidade'));
         } else {
-            $this->Flash->error(__('The {0} could not be deleted. Please, try again.', 'Especialidade'));
+            $this->Flash->error(__('A {0} não foi removida. Por favor, tente novamente.', 'Especialidade'));
         }
 
         return $this->redirect(['action' => 'index']);

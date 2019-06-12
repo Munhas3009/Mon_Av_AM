@@ -52,11 +52,11 @@ class DistritosController extends AppController
         if ($this->request->is('post')) {
             $distrito = $this->Distritos->patchEntity($distrito, $this->request->getData());
             if ($this->Distritos->save($distrito)) {
-                $this->Flash->success(__('The {0} has been saved.', 'Distrito'));
+                $this->Flash->success(__('O {0} foi registado com sucesso.', 'Distrito'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The {0} could not be saved. Please, try again.', 'Distrito'));
+            $this->Flash->error(__('O {0} não foi registado. Por favor, tente novamente.', 'Distrito'));
         }
         $this->set(compact('distrito'));
     }
@@ -77,11 +77,11 @@ class DistritosController extends AppController
         if ($this->request->is(['patch', 'post', 'put'])) {
             $distrito = $this->Distritos->patchEntity($distrito, $this->request->getData());
             if ($this->Distritos->save($distrito)) {
-                $this->Flash->success(__('The {0} has been saved.', 'Distrito'));
+                $this->Flash->success(__('O {0} foi actualizado com sucesso.', 'Distrito'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The {0} could not be saved. Please, try again.', 'Distrito'));
+            $this->Flash->error(__('O {0} não foi actualizado. Por favor, tente novamente.', 'Distrito'));
         }
         $this->set(compact('distrito'));
     }
@@ -99,9 +99,9 @@ class DistritosController extends AppController
         $this->request->allowMethod(['post', 'delete']);
         $distrito = $this->Distritos->get($id);
         if ($this->Distritos->delete($distrito)) {
-            $this->Flash->success(__('The {0} has been deleted.', 'Distrito'));
+            $this->Flash->success(__('O {0} foi removido.', 'Distrito'));
         } else {
-            $this->Flash->error(__('The {0} could not be deleted. Please, try again.', 'Distrito'));
+            $this->Flash->error(__('O {0} não foi removido. Por favor, tente novamente.', 'Distrito'));
         }
 
         return $this->redirect(['action' => 'index']);

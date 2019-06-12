@@ -89,7 +89,7 @@ class AppController extends Controller {
             //$this->redirect(['controller' => 'users', 'action' => 'add']);
             return true;
         }
-        return false;
+        return true;
     }
 
 }

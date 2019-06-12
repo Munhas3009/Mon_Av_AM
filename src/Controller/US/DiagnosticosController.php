@@ -49,11 +49,11 @@ class DiagnosticosController extends AppController {
         if ($this->request->is('post')) {
             $diagnostico = $this->Diagnosticos->patchEntity($diagnostico, $this->request->getData());
             if ($this->Diagnosticos->save($diagnostico)) {
-                $this->Flash->success(__('The {0} has been saved.', 'Diagnostico'));
+                $this->Flash->success(__('O {0} foi registado com sucesso.', 'Diagnostico'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The {0} could not be saved. Please, try again.', 'Diagnostico'));
+            $this->Flash->error(__('O {0} não foi registado. Por favor, tente novamente.', 'Diagnostico'));
         }
         $this->set(compact('diagnostico'));
     }
@@ -72,11 +72,11 @@ class DiagnosticosController extends AppController {
         if ($this->request->is(['patch', 'post', 'put'])) {
             $diagnostico = $this->Diagnosticos->patchEntity($diagnostico, $this->request->getData());
             if ($this->Diagnosticos->save($diagnostico)) {
-                $this->Flash->success(__('The {0} has been saved.', 'Diagnostico'));
+                $this->Flash->success(__('O {0} foi actualizado com sucesso.', 'Diagnostico'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The {0} could not be saved. Please, try again.', 'Diagnostico'));
+            $this->Flash->error(__('O {0} não foi actualizado. Por favor, tente novamente.', 'Diagnostico'));
         }
         $this->set(compact('diagnostico'));
     }
@@ -92,17 +92,19 @@ class DiagnosticosController extends AppController {
         $this->request->allowMethod(['post', 'delete']);
         $diagnostico = $this->Diagnosticos->get($id);
         if ($this->Diagnosticos->delete($diagnostico)) {
-            $this->Flash->success(__('The {0} has been deleted.', 'Diagnostico'));
+            $this->Flash->success(__('O {0} foi removido.', 'Diagnostico'));
         } else {
-            $this->Flash->error(__('The {0} could not be deleted. Please, try again.', 'Diagnostico'));
+            $this->Flash->error(__('O {0} não foi removido. Por favor, tente novamente.', 'Diagnostico'));
         }
 
         return $this->redirect(['action' => 'index']);
     }
+    
+    
 
     public function cakePdfDownload($name = null) {
         Configure::write('CakePdf.download', true);
-        Configure::write('CakePdf.filename', "Diagnosticos.pdf");
+        Configure::write('CakePdf.filename', "MyDiagnostico.pdf");
     }
 
 }

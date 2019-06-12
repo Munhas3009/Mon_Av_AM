@@ -107,7 +107,7 @@ class UsersController extends AppController {
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('O {0} não foi registado. Por favor, tentar de novo.', 'Utilizador'));
+            $this->Flash->error(__('O {0} não foi registado. Por favor, tente novamente.', 'Utilizador'));
         }
         $roles = $this->Users->Roles->find('list', ['limit' => 200]);
         $this->set(compact('user', 'roles'));
@@ -143,7 +143,7 @@ class UsersController extends AppController {
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('O {0} não foi actualizado. Por favor, tentar de novo.', 'Utilizador'));
+            $this->Flash->error(__('O {0} não foi actualizado. Por favor, tente novamente.', 'Utilizador'));
         }
         $roles = $this->Users->Roles->find('list', ['limit' => 200]);
         $this->set(compact('user', 'roles'));
@@ -162,7 +162,7 @@ class UsersController extends AppController {
         if ($this->Users->delete($user)) {
             $this->Flash->success(__('O {0} foi removido.', 'Utilizador'));
         } else {
-            $this->Flash->error(__('O {0} não pode ser removido. Por favor, tentar de novo.', 'Utilizador'));
+            $this->Flash->error(__('O {0} não pode ser removido. Por favor, tente novamente.', 'Utilizador'));
         }
 
         return $this->redirect(['action' => 'index']);

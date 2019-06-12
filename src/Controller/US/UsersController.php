@@ -176,9 +176,10 @@ class UsersController extends AppController {
      * @return \Cake\Network\Response
      */
     public function logout() {
-
+        
         $this->Flash->success('O saiu do sistema com sucesso', ['key' => 'auth']);
         return $this->redirect($this->Auth->logout());
+        
         
     }
 

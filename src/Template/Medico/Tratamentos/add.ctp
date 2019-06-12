@@ -7,7 +7,7 @@
 <!-- Content Header (Page header) -->
 <section class="content-header">
     <h1>
-        Tratamento
+        Consulta
         <small>
             <?php echo __(''); ?>
             <i class="fa fa-plus-circle"></i>
@@ -40,31 +40,38 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
-                        <?php echo $this->Form->control('unidade_id', ['options' => $unidades, 'class' => 'form-control select2', 'empty' => true]); ?>
+                        <?php echo $this->Form->control('unidade_id', ['options' => $unidades, 'class' => 'form-control select2'
+						, 'empty' => true]); ?>
                     </div>
 
                     <!-- /.form-group -->
                     <div class="form-group">
-                        <?php echo $this->Form->control('user_id', ['options' => $users, 'class' => 'form-control select2', 'empty' => true]); ?>
+                        <?php echo $this->Form->control('user_id', ['options' => $users, 'class' => 'form-control select2'
+						, 'empty' => true]); ?>
                     </div>
                 </div>
                 <!-- /.col -->
                 <div class="col-md-6">
                     <!-- /.form-group -->
                     <div class="form-group">
-                        <?php echo $this->Form->control('especialidade_id', ['options' => $especialidades, 'class' => 'form-control select2', 'empty' => true]); ?>
+                        <?php echo $this->Form->control('especialidade_id', ['options' => $especialidades, 'class' => 'form-control select2'
+						, 'empty' => true]); ?>
                     </div>
 
                     <!-- /.form-group -->
                     <div class="form-group">
-                        <?php echo $this->Form->control('paciente_id', ['options' => $pacientes, 'class' => 'form-control select2', 'empty' => true]); ?>
+                        <?php echo $this->Form->control('paciente_id', ['options' => $pacientes, 'class' => 'form-control select2'
+						, 'empty' => true]); ?>
                     </div>
                 </div>
                 <!-- /.col -->
             </div>
             <!-- /.row -->
         </div>
-        <!-- /.box-body -->
+        <!-- /.box-body -->		
+		<div class="box-footer">
+          
+        </div>		
     </div>
     <!--box-->
 
@@ -91,7 +98,8 @@
                     </div>
                     <!-- /.form group -->
                     <div class="form-group">
-                        <?php echo $this->Form->control('diagnostico_id', ['options' => $diagnosticos, 'empty' => true]); ?>
+                        <?php echo $this->Form->control('diagnostico_id', ['options' => $diagnosticos, 'empty' => true,
+						'class'=>'form-control select2']); ?>
 
                     </div>
                     <!-- /.form group -->
