@@ -59,13 +59,16 @@ class AppController extends Controller {
                 'controller' => 'Users',
                 'action' => 'login'
             ],
+            
             'loginRedirect' => [
                 'controller' => 'Pages',
                 'action' => 'display'
             ],
+            'logoutRedirect' => [
+                'controller' => 'Users',
+                'action' => 'login'
+            ],
             'authError' => 'Dados Inválidos'
-            
-            
         ]);
 
         /*

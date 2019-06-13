@@ -18,40 +18,37 @@ class UsersController extends AppController {
      *
      * @return \Cake\Http\Response|void
      */
-    public function login() {
+    public function login(){
 
         if ($this->request->is('post')) {
 
             $user = $this->Auth->identify();
             if ($user) {
                 $this->Auth->setUser($user);
-                $loggedUser = $this->request->session()->read('Auth.User');
                 
-                if ($loggedUser['role_id'] == 1) {
+                $loggedUser = $this->request->session()->read('Auth.User');
+
+                if ($loggedUser['role_id'] === 1) {
 
                     return $this->redirect('/');
-                    
-                } else if ($loggedUser['role_id'] == 2) {
+                } else if ($loggedUser['role_id'] === 2) {
 
                     return $this->redirect('/dscm/distritos');
-                    
-                } else if ($loggedUser['role_id'] == 3) {
+                } else if ($loggedUser['role_id'] === 3) {
 
                     return $this->redirect('/medico/tratamentos');
-                                        
-                } elseif ($loggedUser['role_id'] == 4) {
+                } elseif ($loggedUser['role_id'] === 4) {
 
                     return $this->redirect('/us/pacientes');
-                    
                 } else {
-                    return $this->redirect($this->Auth->redirectUrl('users/login'));
+                    return $this->redirect($this->Auth->redirectUrl('users/index'));
                 }
             } else {
                 $this->Flash->error('Dados Invalidos, por favor tente novamente', ['key' => 'auth']);
             }
         }
     }
-    
+
     /**
      * Logout method
      *
@@ -87,6 +84,14 @@ class UsersController extends AppController {
     public function view($id = null) {
         $user = $this->Users->get($id, [
             'contain' => ['Roles', 'Campanhas', 'Tratamentos']
+        ]);
+
+//configurando o nosso plugin pdf dentro da nossa function view
+        $this->viewBuilder()->options([
+            'pdfConfig' => [
+                'orientation' => 'portrait',
+                'filename' => 'User_' . $id . '.pdf'
+            ]
         ]);
 
         $this->set('user', $user);
@@ -178,7 +183,5 @@ class UsersController extends AppController {
 
         return $this->redirect(['action' => 'index']);
     }
-
-    
 
 }

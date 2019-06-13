@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Routes configuration
  *
@@ -102,6 +103,7 @@ Router::scope('/', function (RouteBuilder $routes) {
  * });
  * ```
  */
+//introduzimos as rotas por prefixo
 Router::prefix('dscm', function ($routes) {
     // All routes here will be prefixed with `/admin`
     // And have the prefix => admin route element added.
@@ -119,13 +121,13 @@ Router::prefix('us', function ($routes) {
     // And have the prefix => admin route element added.
     $routes->fallbacks(DashedRoute::class);
 });
-
 //rota do nosso pdf
 Router::extensions(['pdf']);
 
 //para baixar e abrir a stream do pdf
-Router::scope('/pdf_download/:id', function (RouteBuilder $routes) {
-    $routes->addExtensions(['pdf']);
-    $routes->connect('/', ['controller' => 'Pages', 'action' => 'cakePdfDownload']);
-    $routes->connect('/', ['controller' => 'US/Diagnosticos', 'action' => 'cakePdfDownload']);
+
+Router::scope('/users', function ($routes) {
+    $routes->extensions('pdf');
+    $routes->connect('/view/*', ['controller' => 'Users', 'action' => 'view']);
+    $routes->fallbacks('InflectedRoute');
 });

@@ -132,20 +132,20 @@ class UsersTable extends Table {
         return $rules;
     }
 
-    public function validationHardened(Validator $validator) {
-        $validator = $this->validationDefault($validator);
-
-        $validator->add('password', 'length', ['rule' => ['lengthBetween', 8, 100]]);
-        return $validator;
-    }
-
-    public function validatePasswords($validator) {
-        $validator->add('confirm_password', 'no-misspelling', [
-            'rule' => ['compareWith', 'password'],
-            'message' => 'Password não é igual',
-        ]);
-
-        return $validator;
-    }
+//    public function validationHardened(Validator $validator) {
+//        $validator = $this->validationDefault($validator);
+//
+//        $validator->add('password', 'length', ['rule' => ['lengthBetween', 8, 100]]);
+//        return $validator;
+//    }
+//
+//    public function validatePasswords($validator) {
+//        $validator->add('confirm_password', 'no-misspelling', [
+//            'rule' => ['compareWith', 'password'],
+//            'message' => 'Password não é igual',
+//        ]);
+//
+//        return $validator;
+//    }
 
 }
