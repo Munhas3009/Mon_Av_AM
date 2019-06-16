@@ -25,7 +25,7 @@ class UsersFixture extends TestFixture
         'photo' => ['type' => 'string', 'length' => 255, 'null' => true, 'default' => null, 'collate' => 'latin1_swedish_ci', 'comment' => '', 'precision' => null, 'fixed' => null],
         'photo_dir' => ['type' => 'string', 'length' => 255, 'null' => true, 'default' => null, 'collate' => 'latin1_swedish_ci', 'comment' => '', 'precision' => null, 'fixed' => null],
         'timeout' => ['type' => 'timestamp', 'length' => null, 'null' => true, 'default' => null, 'comment' => '', 'precision' => null],
-        'role_id' => ['type' => 'integer', 'length' => 11, 'unsigned' => true, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
+        'role_id' => ['type' => 'integer', 'length' => 11, 'unsigned' => true, 'null' => true, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
         'created' => ['type' => 'datetime', 'length' => null, 'null' => true, 'default' => null, 'comment' => '', 'precision' => null],
         'modified' => ['type' => 'datetime', 'length' => null, 'null' => true, 'default' => null, 'comment' => '', 'precision' => null],
         '_indexes' => [
@@ -59,10 +59,10 @@ class UsersFixture extends TestFixture
                 'passkey' => 'Lorem ipsum',
                 'photo' => 'Lorem ipsum dolor sit amet',
                 'photo_dir' => 'Lorem ipsum dolor sit amet',
-                'timeout' => 1559589954,
+                'timeout' => 1560541251,
                 'role_id' => 1,
-                'created' => '2019-06-03 19:25:54',
-                'modified' => '2019-06-03 19:25:54'
+                'created' => '2019-06-14 19:40:51',
+                'modified' => '2019-06-14 19:40:51'
             ],
         ];
         parent::init();

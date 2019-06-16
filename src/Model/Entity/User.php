@@ -1,8 +1,6 @@
 <?php
-
 namespace App\Model\Entity;
 
-use Cake\Auth\DefaultPasswordHasher;
 use Cake\ORM\Entity;
 
 /**
@@ -18,7 +16,7 @@ use Cake\ORM\Entity;
  * @property string|null $photo
  * @property string|null $photo_dir
  * @property \Cake\I18n\FrozenTime|null $timeout
- * @property int $role_id
+ * @property int|null $role_id
  * @property \Cake\I18n\FrozenTime|null $created
  * @property \Cake\I18n\FrozenTime|null $modified
  *
@@ -26,8 +24,8 @@ use Cake\ORM\Entity;
  * @property \App\Model\Entity\Campanha[] $campanhas
  * @property \App\Model\Entity\Tratamento[] $tratamentos
  */
-class User extends Entity {
-
+class User extends Entity
+{
     /**
      * Fields that can be mass assigned using newEntity() or patchEntity().
      *
@@ -63,29 +61,4 @@ class User extends Entity {
     protected $_hidden = [
         'password'
     ];
-
-    // Encripta as senhas de acesso
-    protected function _setPassword($password) {
-        if (strlen($password) > 0) {
-            return (new DefaultPasswordHasher)->hash($password);
-        }
-    }
-
-    public function parentNode() {
-        if (!$this->id) {
-            return null;
-        }
-        if (isset($this->role_id)) {
-            $roleId = $this->role_id;
-        } else {
-            $Users = TableRegistry::get('Users');
-            $user = $Users->find('all', ['fields' => ['role_id']])->where(['id' => $this->id])->first();
-            $roleId = $user->role_id;
-        }
-        if (!$roleId) {
-            return null;
-        }
-        return ['Roles' => ['id' => $roleId]];
-    }
-
 }
