@@ -44,9 +44,9 @@ class AppController extends Controller {
         $this->loadComponent('RequestHandler', [
             'enableBeforeRedirect' => false,
         ]);
-        
+
         $this->loadComponent('Flash');
-        /* $this->loadComponent('Auth', [
+        $this->loadComponent('Auth', [
             'authorize' => ['Controller'],
             'authenticate' => [
                 'Form' => [
@@ -60,7 +60,6 @@ class AppController extends Controller {
                 'controller' => 'Users',
                 'action' => 'login'
             ],
-            
             'loginRedirect' => [
                 'controller' => 'Pages',
                 'action' => 'display'
@@ -71,7 +70,7 @@ class AppController extends Controller {
             ],
             'storage' => 'Session',
             'authError' => 'Dados Inválidos'
-        ]); */
+        ]);
 
         /*
          * Enable the following component for recommended CakePHP security settings.

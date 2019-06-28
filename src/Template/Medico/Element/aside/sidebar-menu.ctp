@@ -15,6 +15,20 @@
 
         </ul>
     </li>
+    
+    <li class="treeview">
+        <a href="#">
+            <i class="fa fa-child" aria-hidden="true"></i> <span>Parto</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+            </span>
+        </a>
+        <ul class="treeview-menu">
+            <li><a href="<?php echo $this->Url->build('/medico/partos/add'); ?>"><i class="fa fa-circle-o"></i> Registar </a></li>
+            <li><a href="<?php echo $this->Url->build('/medico/partos'); ?>"><i class="fa fa-circle-o"></i> Todos </a></li>
+
+        </ul>
+    </li>
 
     <li>
         <a href="<?php echo $this->Url->build('/pages/calendar'); ?>">

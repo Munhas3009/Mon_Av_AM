@@ -27,6 +27,7 @@ class UnidadesTableTest extends TestCase
         'app.Classificacaos',
         'app.Distritos',
         'app.Campanhas',
+        'app.Partos',
         'app.Tratamentos'
     ];
 

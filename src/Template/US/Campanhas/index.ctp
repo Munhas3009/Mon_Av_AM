@@ -42,18 +42,18 @@
                     <table id="example2" class="table table-bordered table-hover">
                         <thead>
                             <tr>
-                                <th scope="col"><?= $this->Paginator->sort('id') ?></th>
-                                <th scope="col"><?= $this->Paginator->sort('US') ?></th>
-                                <th scope="col"><?= $this->Paginator->sort('Utilizador') ?></th>
-                                <th scope="col"><?= $this->Paginator->sort('Descrição') ?></th>
-                                <th scope="col"><?= $this->Paginator->sort('Nº de dose') ?></th>
-                                <th scope="col"><?= $this->Paginator->sort('Aplicada na US') ?></th>
-                                <th scope="col"><?= $this->Paginator->sort('Aplicada por BM') ?></th>
-                                <th scope="col"><?= $this->Paginator->sort('Aplicada por ACS') ?></th>
-                                <th scope="col"><?= $this->Paginator->sort('interv_idade') ?></th>
-                                <th scope="col"><?= $this->Paginator->sort('mulheres_p_parto') ?></th>
-                                <th scope="col"><?= $this->Paginator->sort('registado') ?></th>
-                                <th scope="col"><?= $this->Paginator->sort('Actualizado') ?></th>
+                                <th scope="col" class="actions text-center"><?= $this->Paginator->sort('id') ?></th>
+                                <th scope="col" class="actions text-center"><?= $this->Paginator->sort('US') ?></th>
+                                <th scope="col" class="actions text-center"><?= $this->Paginator->sort('técnico') ?></th>
+                                <th scope="col" class="actions text-center"><?= $this->Paginator->sort('Descrição') ?></th>
+                                <th scope="col" class="actions text-center"><?= $this->Paginator->sort('Nºdose') ?></th>
+                                <th scope="col" class="actions text-center"><?= $this->Paginator->sort('US') ?></th>
+                                <th scope="col" class="actions text-center"><?= $this->Paginator->sort('BM') ?></th>
+                                <th scope="col" class="actions text-center"><?= $this->Paginator->sort('ACS') ?></th>
+                                <th scope="col" class="actions text-center"><?= $this->Paginator->sort('idade') ?></th>
+                                <th scope="col" class="actions text-center"><?= $this->Paginator->sort('MPP') ?></th>
+                                <th scope="col" class="actions text-center"><?= $this->Paginator->sort('registado') ?></th>
+                                <th scope="col" class="actions text-center"><?= $this->Paginator->sort('Actualizado') ?></th>
                                 <th scope="col" class="actions text-center"><?= __('Acções') ?></th>
                             </tr>
                         </thead>

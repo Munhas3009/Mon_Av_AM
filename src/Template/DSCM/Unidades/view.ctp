@@ -1,14 +1,16 @@
 <section class="content-header">
     <h1>
-        Unidade Sanitária
+        Unidade
         <small>
             <?php echo __(''); ?>
             <i class="fa fa-eye"></i>
         </small>
     </h1>
-
     <ol class="breadcrumb">
         <li><a href="<?php echo $this->Url->build(['action' => 'index']); ?>"><i class="fa fa-dashboard"></i> <?php echo __('Home'); ?></a></li>
+        <li class="active"><i class="fa fa-info"></i></li>
+        <li><a href="<?php echo $this->Url->build(['action' => 'view', $unidade->id, '_ext' => 'pdf']); ?>"><i class="fa fa-download"></i><?php echo __('Pdf'); ?></a></li>
+
     </ol>
 </section>
 
@@ -25,8 +27,8 @@
                 <div class="box-body">
                     <dl class="dl-horizontal">
 
-                        <dt scope="row"><?= __('Id') ?></dt>
-                        <dd><?= $this->Number->format($unidade->id) ?></dd>
+<!--                        <dt scope="row"><?= __('Id') ?></dt>
+                        <dd><?= $this->Number->format($unidade->id) ?></dd>-->
 
                         <dt scope="row"><?= __('Nome da US') ?></dt>
                         <dd><?= h($unidade->name) ?></dd>
@@ -43,7 +45,6 @@
 
                         <dt scope="row"><?= __('Número de Camas') ?></dt>
                         <dd><?= $this->Number->format($unidade->numero_camas) ?></dd>
-
                         <dt scope="row"><?= __('Data da Fundação') ?></dt>
                         <dd><?= h($unidade->data_fundacao) ?></dd>
                         <dt scope="row"><?= __('Registado') ?></dt>
@@ -87,32 +88,19 @@
     <div class="row">
         <div class="col-md-12">
             <div class="box box-solid">
-
                 <div class="box-header with-border">
-
-                    <!-- Content Header (Page header) -->
-                    <section class="content-header">
-                        <i class="fa fa-share-alt"></i>                        
-                        <h3 class="box-title"><?= __('Campanhas') ?></h3>
-
-                         <ol class="breadcrumb">
-                            <li><a href="<?php echo $this->Url->build(['action' => 'index']); ?>"><i class="fa fa-dashboard"></i> Home</a></li>
-                            <li class="active">Campanhas da US</li>
-                            <li><a href="<?php echo $this->Url->build(['action' => 'campanhas']); ?>"><i class="fa fa-download"></i>Excel</a></li>
-                        </ol>
-                    </section>
+                    <i class="fa fa-share-alt"></i>
+                    <h3 class="box-title"><?= __('Campanhas') ?></h3>
                 </div>
-
                 <!-- /.box-header -->
                 <div class="box-body">
                     <?php if (!empty($unidade->campanhas)): ?>
-                        <table id="example2" class="table table-bordered table-hover">
+                        <table id="example3" class="table table-bordered table-hover">
                             <thead>
-
                                 <tr>
-                                    <th scope="col" class="actions text-center"><?= __('Id') ?></th>
+                                    <th scope="col"><?= __('Id') ?></th>
                                     <!--<th scope="col"><?= __('Unidade Id') ?></th>-->
-                                    <!--<th scope="col"><?= __('User Id') ?></th>-->
+                                    <!--<th scope="col"><?= __('Utilizador') ?></th>-->
                                     <th scope="col" class="actions text-center"><?= __('Descrição da Campanha') ?></th>
                                     <th scope="col" class="actions text-center"><?= __('Dose') ?></th>
                                     <th scope="col" class="actions text-center"><?= __('Minist. US') ?></th>
@@ -123,14 +111,14 @@
                                     <th scope="col" class="actions text-center"><?= __('Comentários') ?></th>
                                     <th scope="col" class="actions text-center"><?= __('Registado') ?></th>
                                     <th scope="col" class="actions text-center"><?= __('Actualizado') ?></th>
-                                    <!--<th scope="col" class="actions text-center"><?= __('Actions') ?></th>-->
+                    <!--<th scope="col" class="actions text-center"><?= __('Actions') ?></th>-->
                                 </tr>
                             </thead>
                             <?php foreach ($unidade->campanhas as $campanhas): ?>
                                 <tr>
                                     <td><?= h($campanhas->id) ?></td>
-                                    <!--<td><?= h($campanhas->unidade_id) ?></td>-->
-                                    <!--<td><?= h($campanhas->user_id) ?></td>-->
+                <!--                    <td><?= h($campanhas->unidade_id) ?></td>
+                                    <td><?= h($campanhas->user_id) ?></td>-->
                                     <td><?= h($campanhas->desc_campanha) ?></td>
                                     <td><?= h($campanhas->dose) ?></td>
                                     <td><?= h($campanhas->unidade_sanitaria) ?></td>
@@ -158,38 +146,75 @@
         <div class="col-md-12">
             <div class="box box-solid">
                 <div class="box-header with-border">
-
-                    <!-- Content Header (Page header) -->
-                    <section class="content-header">
-                        <i class="fa fa-share-alt"></i>
-                        <h3 class="box-title"><?= __('Consultas') ?></h3>
-
-                        <ol class="breadcrumb">
-                            <li><a href="<?php echo $this->Url->build(['action' => 'index']); ?>"><i class="fa fa-dashboard"></i> Home</a></li>
-                            <li class="active">Tratamentos da US</li>
-                            <li><a href="<?php echo $this->Url->build(['action' => 'tratamentos']); ?>"><i class="fa fa-download"></i>Excel</a></li>
-                        </ol>
-                    </section>
-
+                    <i class="fa fa-share-alt"></i>
+                    <h3 class="box-title"><?= __('Partos') ?></h3>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <?php if (!empty($unidade->partos)): ?>
+                        <table id="example1" class="table table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col"><?= __('Id') ?></th>
+    <!--                                <th scope="col" class="actions text-center"><?= __('Unidade Id') ?></th>
+                                    <th scope="col" class="actions text-center"><?= __('User Id') ?></th>
+                                    <th scope="col" class="actions text-center"><?= __('Paciente Id') ?></th>-->
+                                    <th scope="col" class="actions text-center"><?= __('Tipo') ?></th>
+                                    <th scope="col" class="actions text-center"><?= __('Peso') ?></th>
+                                    <th scope="col" class="actions text-center"><?= __('Observações') ?></th>
+                                    <th scope="col" class="actions text-center"><?= __('Registado') ?></th>
+                                    <th scope="col" class="actions text-center"><?= __('Actualizado') ?></th>
+                                    <!--<th scope="col" class="actions text-center"><?= __('Actions') ?></th>-->
+                                </tr>
+                            </thead>
+                            <?php foreach ($unidade->partos as $partos): ?>
+                                <tr>
+                                    <td><?= h($partos->id) ?></td>
+        <!--                                    <td><?= h($partos->unidade_id) ?></td>
+                                    <td><?= h($partos->user_id) ?></td>
+                                    <td><?= h($partos->paciente_id) ?></td>-->
+                                    <td><?= h($partos->tipo) ?></td>
+                                    <td><?= h($partos->peso) ?></td>
+                                    <td><?= h($partos->obs) ?></td>
+                                    <td><?= h($partos->created) ?></td>
+                                    <td><?= h($partos->modified) ?></td>
+        <!--                                    <td class="actions text-right">
+                                    <?= $this->Html->link(__('View'), ['controller' => 'Partos', 'action' => 'view', $partos->id], ['class' => 'btn btn-info btn-xs']) ?>
+                                    <?= $this->Html->link(__('Edit'), ['controller' => 'Partos', 'action' => 'edit', $partos->id], ['class' => 'btn btn-warning btn-xs']) ?>
+                                    <?= $this->Form->postLink(__('Delete'), ['controller' => 'Partos', 'action' => 'delete', $partos->id], ['confirm' => __('Are you sure you want to delete # {0}?', $partos->id), 'class' => 'btn btn-danger btn-xs']) ?>
+                                    </td>-->
+                                </tr>
+                            <?php endforeach; ?>
+                        </table>
+                    <?php endif; ?>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box box-solid">
+                <div class="box-header with-border">
+                    <i class="fa fa-share-alt"></i>
+                    <h3 class="box-title"><?= __('Tratamentos') ?></h3>
                 </div>
                 <!-- /.box-header -->
                 <div class="box-body">
                     <?php if (!empty($unidade->tratamentos)): ?>
-                        <table id="example1" class="table table-bordered table-hover">
+                        <table id="example2" class="table table-bordered table-hover">
                             <thead>
-
                                 <tr>
                                     <th scope="col" class="actions text-center"><?= __('Id') ?></th>
-                                    <!--<th scope="col"><?= __('Unidade Id') ?></th>-->
-                                    <!--<th scope="col" class="actions text-center"><?= __('Médico') ?></th>-->
-                                    <th scope="col" class="actions text-center"><?= __('Especialidade') ?></th>
+        <!--                                <th scope="col"><?= __('Unidade Id') ?></th>
+                                    <th scope="col"><?= __('User Id') ?></th>-->
+                                    <th scope="col" class="actions text-center"><?= __('Esp.') ?></th>
                                     <!--<th scope="col"><?= __('Paciente Id') ?></th>-->
-                                    <!--<th scope="col"><?= __('Contador') ?></th>-->
                                     <th scope="col" class="actions text-center"><?= __('Estado') ?></th>
                                     <th scope="col" class="actions text-center"><?= __('Diagnóstico') ?></th>
                                     <th scope="col" class="actions text-center"><?= __('Tratamento') ?></th>
                                     <th scope="col" class="actions text-center"><?= __('Vacinação') ?></th>
-                                    <th scope="col" class="actions text-center"><?= __('Observação') ?></th>
+                                    <!--<th scope="col"><?= __('Obs') ?></th>-->
+                                    <th scope="col" class="actions text-center"><?= __('Contador') ?></th>
                                     <th scope="col" class="actions text-center"><?= __('Registado') ?></th>
                                     <th scope="col" class="actions text-center"><?= __('Actualizado') ?></th>
                                     <!--<th scope="col" class="actions text-center"><?= __('Actions') ?></th>-->
@@ -198,16 +223,16 @@
                             <?php foreach ($unidade->tratamentos as $tratamentos): ?>
                                 <tr>
                                     <td><?= h($tratamentos->id) ?></td>
-                                    <!--<td><?= h($tratamentos->unidade_id) ?></td>-->
-                                    <!--<td><?= h($tratamentos->user_id) ?></td>-->
+        <!--                                    <td><?= h($tratamentos->unidade_id) ?></td>
+                                    <td><?= h($tratamentos->user_id) ?></td>-->
                                     <td><?= h($tratamentos->especialidade_id) ?></td>
                                     <!--<td><?= h($tratamentos->paciente_id) ?></td>-->
-                                    <!--<td><?= h($tratamentos->contador) ?></td>-->
                                     <td><?= h($tratamentos->estado) ?></td>
                                     <td><?= h($tratamentos->diagnostico_id) ?></td>
                                     <td><?= h($tratamentos->tratamento) ?></td>
                                     <td><?= h($tratamentos->svacinacao) ?></td>
-                                    <td><?= h($tratamentos->obs) ?></td>
+                                    <!--<td><?= h($tratamentos->obs) ?></td>-->
+                                    <td><?= h($tratamentos->contador) ?></td>
                                     <td><?= h($tratamentos->created) ?></td>
                                     <td><?= h($tratamentos->modified) ?></td>
         <!--                                    <td class="actions text-right">
@@ -236,7 +261,8 @@
 <script>
     $(function () {
         $('#example1').DataTable()
-        $('#example2').DataTable({
+        $('#example2').DataTable()
+        $('#example3').DataTable({
             'paging': true,
             'lengthChange': false,
             'searching': true,

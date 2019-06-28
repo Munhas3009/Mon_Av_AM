@@ -23,6 +23,7 @@ use Cake\ORM\Entity;
  * @property \App\Model\Entity\Classificacao $classificacao
  * @property \App\Model\Entity\Distrito $distrito
  * @property \App\Model\Entity\Campanha[] $campanhas
+ * @property \App\Model\Entity\Parto[] $partos
  * @property \App\Model\Entity\Tratamento[] $tratamentos
  */
 class Unidade extends Entity
@@ -52,6 +53,7 @@ class Unidade extends Entity
         'classificacao' => true,
         'distrito' => true,
         'campanhas' => true,
+        'partos' => true,
         'tratamentos' => true
     ];
 }

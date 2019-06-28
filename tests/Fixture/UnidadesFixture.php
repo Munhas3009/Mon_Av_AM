@@ -57,14 +57,14 @@ class UnidadesFixture extends TestFixture
                 'slogan' => 'Lorem ipsum dolor sit amet',
                 'nuit' => 'Lorem ipsum dolor sit amet',
                 'email' => 'Lorem ipsum dolor sit amet',
-                'data_fundacao' => '2019-06-03',
+                'data_fundacao' => '2019-06-25',
                 'classificacao_id' => 1,
                 'distrito_id' => 1,
                 'numero_camas' => 1,
                 'endereco' => 'Lorem ipsum dolor sit amet, aliquet feugiat. Convallis morbi fringilla gravida, phasellus feugiat dapibus velit nunc, pulvinar eget sollicitudin venenatis cum nullam, vivamus ut a sed, mollitia lectus. Nulla vestibulum massa neque ut et, id hendrerit sit, feugiat in taciti enim proin nibh, tempor dignissim, rhoncus duis vestibulum nunc mattis convallis.',
                 'comentarios' => 'Lorem ipsum dolor sit amet, aliquet feugiat. Convallis morbi fringilla gravida, phasellus feugiat dapibus velit nunc, pulvinar eget sollicitudin venenatis cum nullam, vivamus ut a sed, mollitia lectus. Nulla vestibulum massa neque ut et, id hendrerit sit, feugiat in taciti enim proin nibh, tempor dignissim, rhoncus duis vestibulum nunc mattis convallis.',
-                'created' => '2019-06-03 19:24:37',
-                'modified' => '2019-06-03 19:24:37'
+                'created' => '2019-06-25 13:06:08',
+                'modified' => '2019-06-25 13:06:08'
             ],
         ];
         parent::init();

@@ -11,6 +11,7 @@ use Cake\Validation\Validator;
  *
  * @property \App\Model\Table\RolesTable|\Cake\ORM\Association\BelongsTo $Roles
  * @property \App\Model\Table\CampanhasTable|\Cake\ORM\Association\HasMany $Campanhas
+ * @property \App\Model\Table\PartosTable|\Cake\ORM\Association\HasMany $Partos
  * @property \App\Model\Table\TratamentosTable|\Cake\ORM\Association\HasMany $Tratamentos
  *
  * @method \App\Model\Entity\User get($primaryKey, $options = [])
@@ -46,6 +47,9 @@ class UsersTable extends Table
             'foreignKey' => 'role_id'
         ]);
         $this->hasMany('Campanhas', [
+            'foreignKey' => 'user_id'
+        ]);
+        $this->hasMany('Partos', [
             'foreignKey' => 'user_id'
         ]);
         $this->hasMany('Tratamentos', [

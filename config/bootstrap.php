@@ -215,5 +215,12 @@ Configure::write('CakePdf', [
             'dpi' => 96
         ]
     ],
-    'pageSize' => 'Letter',
+    'margin' => [
+        'bottom' => 15,
+        'left' => 20,
+        'right' => 10,
+        'top' => 15
+    ],
+    'pageSize' => 'Letter'
 ]);
+Configure::write('CakePdf.download', false);

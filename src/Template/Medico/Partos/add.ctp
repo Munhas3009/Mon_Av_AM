@@ -1,16 +1,16 @@
 <?php
 /**
  * @var \App\View\AppView $this
- * @var \App\Model\Entity\Unidade $unidade
+ * @var \App\Model\Entity\Parto $parto
  */
 ?>
 <!-- Content Header (Page header) -->
 <section class="content-header">
     <h1>
-        Unidade Sanitária
+        Parto
         <small>
             <?php echo __(''); ?>
-            <i class="fa fa-edit"></i>
+            <i class="fa fa-plus-circle"></i>
         </small>
     </h1>
     <ol class="breadcrumb">
@@ -20,107 +20,84 @@
 
 <!-- Main content -->
 <section class="content">
-    <div class="row">
-        <div class="col-md-12">
-            <!-- general form elements -->
-            <div class="box box-primary">
-                <div class="box-header with-border">
-                    <h3 class="box-title"><?php echo __('Formulário'); ?></h3>
-                </div>
-                <!-- /.box-header -->
-                <!-- form start -->
-                <?php echo $this->Form->create($unidade, ['role' => 'form']); ?>
-                <div class="box-body">
 
-
-                    <div class="col-md-6">
-                        <div class="form-group has-feedback">
-                            <?php echo $this->Form->control('name', ['label' => 'Nome da unidade sanitária']); ?>
-                            <span class="glyphicon glyphicon-home form-control-feedback"></span>
-                        </div>
-                    </div>   
-
-                    <div class="col-md-6">
-                        <div class="form-group has-feedback">
-                            <?php echo $this->Form->control('slogan', ['label' => 'Slogan da instituição']); ?>
-                            <span class="glyphicon glyphicon-eye-open form-control-feedback"></span>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6">
-                        <div class="form-group has-feedback">
-                            <?php echo $this->Form->control('nuit', ['label' => 'NUIT']); ?>
-                            <span class="glyphicon glyphicon-certificate form-control-feedback"></span>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6">
-                        <div class="form-group has-feedback">
-                            <?php echo $this->Form->control('email', ['label' => 'Correio electrónico', 'type'=>'email']); ?>
-                            <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6">
-                        <label>Data da fundação</label>
-                        <div class="input-group">
-                            <div class="input-group-addon">
-                                <i class="fa fa-calendar"></i>
-                            </div>
-                            <input type="date" name="data_fundacao" class="form-control" data-placeholder="Data da fundação" data-mask>
-                            <span class="glyphicon glyphicon-calendar form-control-feedback"></span>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6">
-                        <div class="form-group has-feedback">
-                            <?php
-                            echo $this->Form->control('classificacao_id', ['style' => 'width: 100%;',
-                                'options' => $classificacaos, 'empty' => true, 'label' => 'Classificação', 'class'=>'form-control select2']);
-                            ?>
-                            <span class="glyphicon glyphicon-level-up form-control-feedback"></span>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6">
-                        <div class="form-group has-feedback">
-                            <?php echo $this->Form->control('distrito_id', ['class'=>'form-control select2','options' => $distritos, 'empty' => true]); ?>
-                            <span class="glyphicon glyphicon-link form-control-feedback"></span>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6">
-                        <div class="form-group has-feedback">
-                            <?php echo $this->Form->control('numero_camas', ['label' => 'Nº de camas']); ?>
-                            <span class="glyphicon glyphicon-bed form-control-feedback"></span>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6">
-                        <div class="form-group has-feedback">
-                            <?php echo $this->Form->control('endereco', ['label' => 'Endereço']); ?>
-                            <span class="glyphicon glyphicon-move form-control-feedback"></span>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6">
-                        <div class="form-group has-feedback">
-                            <?php echo $this->Form->control('comentarios', ['label' => 'Comentário']); ?>
-                            <span class="glyphicon glyphicon-comment form-control-feedback"></span>
-                        </div>
-                    </div>
-
-                </div>
-                <!-- /.box-body -->
-
-                <?php echo $this->Form->submit(__('Salvar'), ['class' => 'btn btn-primary']); ?>
-
-                <?php echo $this->Form->end(); ?>
-            </div>
-            <!-- /.box -->
-        </div>
+    <div class="box-header with-border">
+        <h3 class="box-title"><?php echo __('Formulário'); ?></h3>
     </div>
-    <!-- /.row -->
+    <!-- /.box-header -->
+    <!-- form start -->
+    <?php echo $this->Form->create($parto, ['role' => 'form']); ?>
+
+    <div class="row">
+        <div class="col-md-6">
+
+            <div class="box box-danger">
+                <div class="box-header">
+                    <h3 class="box-title">Parto</h3>
+                </div>
+                <div class="box-body">
+                    <!-- Date dd/mm/yyyy -->
+                    <div class="form-group">          
+                        <?php
+                        echo $this->Form->control('unidade_id', ['options' => $unidades, 'empty' => true
+                            , 'class' => 'form-control select2', 'style' => 'width: 100%;', 'label' => 'Unidade Sanitária']);
+                        ?>
+                    </div>
+                    <!-- /.form group -->
+
+                    <div class="form-group">                         
+                        <?php
+                        echo $this->Form->control('user_id', ['options' => $users, 'empty' => true
+                            , 'style' => 'width: 100%;', 'label' => 'Utilizador']);
+                        ?>
+                    </div>
+                    <!-- /.form group -->
+
+                    <div class="form-group">
+                        <?php
+                        echo $this->Form->control('paciente_id', ['options' => $pacientes, 'empty' => true
+                            , 'class' => 'form-control select2', 'style' => 'width: 100%;', 'label' => 'Paciente']);
+                        ?>
+                    </div>
+                    <!-- /.form group -->
+                </div>
+            </div>
+            <!-- /.box-body -->
+        </div>
+        <!--col-->
+        <!-- /.col (left) -->
+        <div class="col-md-6">
+            <div class="box box-primary">
+                <div class="box-header">
+                    <h3 class="box-title">Info</h3>
+                </div>
+                <div class="box-body">
+                    <!-- Date -->
+                    <div class="form-group">
+                        <?php echo $this->Form->control('tipo', ['label' => 'Tipo']); ?>
+                    </div>
+                    <!--form-->
+
+                    <div class="form-group">
+                        <?php echo $this->Form->control('peso', ['label' => 'Peso']); ?>
+                    </div>
+                    <!--form-->
+
+                    <div class="form-group">
+                        <?php echo $this->Form->control('obs', ['label' => 'Observações']); ?>
+                    </div>
+                    <!--form-->
+                </div>
+                <!--box-body-->
+            </div>
+            <!--box-->
+        </div>
+        <!--col-->
+        <!-- /.col (right) -->
+    </div>
+    <!--row-->
+    <?php echo $this->Form->submit(__('Salvar'), ['class' => 'btn btn-primary']); ?>
+    <?php echo $this->Form->end(); ?>
 </section>
 
 <!-- daterange picker -->

@@ -27,7 +27,7 @@
         </a>
         <ul class="treeview-menu">
             <li><a href="<?php echo $this->Url->build('/dscm/classificacaos/add'); ?>"><i class="fa fa-circle-o"></i> Registar </a></li>
-            <li><a href="<?php echo $this->Url->build('/dscm/classificacaos/index'); ?>"><i class="fa fa-circle-o"></i> Todas </a></li>
+            <li><a href="<?php echo $this->Url->build('/dscm/classificacaos'); ?>"><i class="fa fa-circle-o"></i> Todas </a></li>
 
         </ul>
     </li>
@@ -42,10 +42,10 @@
         <ul class="treeview-menu"> chartjs
             <li><a href="<?php echo $this->Url->build('/dscm/diagnosticos/add'); ?>"><i class="fa fa-circle-o"></i> Registar </a></li>
             <li><a href="<?php echo $this->Url->build('/dscm/diagnosticos'); ?>"><i class="fa fa-circle-o"></i> Todos </a></li>
-           
+
         </ul>
     </li>
-    
+
     <li class="treeview">
         <a href="#">
             <i class="fa fa-list"></i> <span>Especialidades </span>
@@ -56,7 +56,7 @@
         <ul class="treeview-menu"> chartjs
             <li><a href="<?php echo $this->Url->build('/dscm/especialidades/add'); ?>"><i class="fa fa-circle-o"></i> Registar </a></li>
             <li><a href="<?php echo $this->Url->build('/dscm/especialidades'); ?>"><i class="fa fa-circle-o"></i> Todas </a></li>
-           
+
         </ul>
     </li>
 
@@ -73,7 +73,7 @@
 
         </ul>
     </li>
-    
+
     <li class="treeview">
         <a href="#">
             <i class="fa fa-hospital-o"></i> <span> Unidade Sanitária </span>
@@ -86,20 +86,7 @@
             <li><a href="<?php echo $this->Url->build('/dscm/unidades'); ?>"><i class="fa fa-circle-o"></i> Todas </a></li>
         </ul>
     </li>
-    
-    <li class="treeview">
-        <a href="#">
-            <i class="fa fa-user-circle-o"></i> <span> Utilizadores </span>
-            <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-            </span>
-        </a>
-        <ul class="treeview-menu">
-            <li><a href="<?php echo $this->Url->build('/dscm/users/add'); ?>"><i class="fa fa-circle-o"></i> Registar </a></li>
-            <li><a href="<?php echo $this->Url->build('/dscm/users'); ?>"><i class="fa fa-circle-o"></i> Todos </a></li>
-        </ul>
-    </li>
-    
+
     <li>
         <a href="<?php echo $this->Url->build('/pages/calendar'); ?>">
             <i class="fa fa-calendar"></i> <span>Calendário</span>
@@ -124,7 +111,6 @@
     <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Importante</span></a></li>
     <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Atenção</span></a></li>
     <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Informação</span></a></li>
-    <li><a href="<?php echo $this->Url->build('/pages/debug'); ?>"><i class="fa fa-bug"></i> <span>Debug</span></a></li>
 
     <li><a href="<?php echo $this->Url->build('/users/logout '); ?>"><i class="fa fa-power-off"></i> <span>Terminar Sessão</a></li>
 

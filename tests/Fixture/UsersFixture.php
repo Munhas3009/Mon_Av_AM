@@ -59,10 +59,10 @@ class UsersFixture extends TestFixture
                 'passkey' => 'Lorem ipsum',
                 'photo' => 'Lorem ipsum dolor sit amet',
                 'photo_dir' => 'Lorem ipsum dolor sit amet',
-                'timeout' => 1560541251,
+                'timeout' => 1561403546,
                 'role_id' => 1,
-                'created' => '2019-06-14 19:40:51',
-                'modified' => '2019-06-14 19:40:51'
+                'created' => '2019-06-24 19:12:26',
+                'modified' => '2019-06-24 19:12:26'
             ],
         ];
         parent::init();

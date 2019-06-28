@@ -6,10 +6,8 @@
 <?php $this->layout = 'AdminLTE.login'; ?>
 
 <div class="users form">
-
-    <?= $this->Flash->render('auth') ?>
-
     <?= $this->Form->create() ?>
+    <?= $this->Flash->render('auth') ?>
 
     <div class="form-group has-feedback">
         <?= $this->Form->control('username', array('label' => false, 'placeholder' => 'Username', 'autofocus' => 'true')) ?>

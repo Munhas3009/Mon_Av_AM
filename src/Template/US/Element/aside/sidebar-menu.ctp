@@ -57,19 +57,6 @@
         </ul>
     </li>
     
-    <li class="treeview">
-        <a href="#">
-            <i class="fa fa-user-circle-o"></i> <span> Utilizadores </span>
-            <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-            </span>
-        </a>
-        <ul class="treeview-menu">
-            <li><a href="<?php echo $this->Url->build('/dscm/users/add'); ?>"><i class="fa fa-circle-o"></i> Registar </a></li>
-            <li><a href="<?php echo $this->Url->build('/dscm/users'); ?>"><i class="fa fa-circle-o"></i> Todas </a></li>
-        </ul>
-    </li>
-
     <li>
         <a href="<?php echo $this->Url->build('/pages/calendar'); ?>">
             <i class="fa fa-calendar"></i> <span>Calendário</span>

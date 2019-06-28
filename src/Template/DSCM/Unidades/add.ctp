@@ -56,7 +56,7 @@
 
                     <div class="col-md-6">
                         <div class="form-group has-feedback">
-                            <?php echo $this->Form->control('email', ['label' => 'Correio electrónico']); ?>
+                            <?php echo $this->Form->control('email', ['label' => 'Correio electrónico', 'type'=>'email']); ?>
                             <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
                         </div>
                     </div>

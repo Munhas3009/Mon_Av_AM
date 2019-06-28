@@ -53,7 +53,7 @@
                             <?php foreach ($pacientes as $paciente): ?>
                                 <tr>
                                     <td><?= $this->Number->format($paciente->id) ?></td>
-                                    <td><?= h($paciente->name) ?></td>
+                                    <td><?= h($paciente->full_name) ?></td>
                                     <td><?= h($paciente->area_trabalho) ?></td>
                                     <td><?= h($paciente->residencia) ?></td>
                                     <td><?= h($paciente->genero) ?></td>

@@ -20,8 +20,10 @@
 
 <!-- Main content -->
 <section class="content">
-
     <!-- SELECT2 EXAMPLE -->
+
+    <!-- form start -->
+    <?php echo $this->Form->create($tratamento, ['role' => 'form']); ?>
     <div class="box box-default">
         <div class="box-header with-border">
             <h3 class="box-title"><?php echo __('Formulário'); ?></h3>
@@ -30,43 +32,58 @@
                 <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
                 <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-remove"></i></button>
             </div>
-        </div>                      
+        </div>
         <!-- /.box-header -->
-        <!-- form start -->
-        <?php echo $this->Form->create($tratamento, ['role' => 'form']); ?>
 
-        <!-- /.box-header -->
         <div class="box-body">
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
-                        <?php echo $this->Form->control('unidade_id', ['options' => $unidades, 'class' => 'form-control select2', 'empty' => true]); ?>
-                    </div>
-
+                        <?php
+                        echo $this->Form->control('unidade_id', ['options' => $unidades, 'empty' => true
+                            , 'class' => 'form-control select2', 'style' => 'width: 100%;', 'label' => 'Unidade Sanitária']);
+                        ?>
+                    </div>                  
                     <!-- /.form-group -->
-                    <div class="form-group">
-                        <?php echo $this->Form->control('user_id', ['options' => $users, 'class' => 'form-control select2', 'empty' => true]); ?>
+
+                    <div class="form-group">                    
+                        <?php
+                        echo $this->Form->control('user_id', ['options' => $users, 'empty' => true
+                            , 'class' => 'form-control select2', 'style' => 'width: 100%;', 'label' => 'Utilizador']);
+                        ?>
                     </div>
+                    <!-- /.form-group -->
                 </div>
                 <!-- /.col -->
-                <div class="col-md-6">
-                    <!-- /.form-group -->
-                    <div class="form-group">
-                        <?php echo $this->Form->control('especialidade_id', ['options' => $especialidades, 'class' => 'form-control select2', 'empty' => true]); ?>
-                    </div>
 
-                    <!-- /.form-group -->
+                <div class="col-md-6">
                     <div class="form-group">
-                        <?php echo $this->Form->control('paciente_id', ['options' => $pacientes, 'class' => 'form-control select2', 'empty' => true]); ?>
+                        <?php
+                        echo $this->Form->control('especialidade_id', ['options' => $especialidades, 'empty' => true
+                            , 'class' => 'form-control select2', 'style' => 'width: 100%;', 'label' => 'Especialidade']);
+                        ?>
+                    </div>  
+                    <!-- /.form-group -->
+
+                    <div class="form-group">
+                        <?php
+                        echo $this->Form->control('paciente_id', ['options' => $pacientes, 'empty' => true
+                            , 'class' => 'form-control select2', 'style' => 'width: 100%;', 'label' => 'Paciente']);
+                        ?>
                     </div>
+                    <!-- /.form-group -->
+
                 </div>
                 <!-- /.col -->
             </div>
             <!-- /.row -->
         </div>
         <!-- /.box-body -->
+        <div class="box-footer">
+
+        </div>
     </div>
-    <!--box-->
+    <!-- /.box -->
 
     <div class="row">
         <div class="col-md-6">
@@ -78,22 +95,19 @@
                 <div class="box-body">
                     <!-- Date dd/mm/yyyy -->
                     <div class="form-group">
-
-                        <?php echo $this->Form->control('contador'); ?>
-
+                        <?php echo $this->Form->control('estado', ['label' => 'Estado']); ?>
                     </div>
                     <!-- /.form group -->
 
-                    <div class="form-group">
-
-                        <?php echo $this->Form->control('estado'); ?>
-
+                    <div class="form-group">                        
+                        <?php
+                        echo $this->Form->control('diagnostico_id', ['options' => $diagnosticos, 'empty' => true
+                            , 'class' => 'form-control select2', 'style' => 'width: 100%;', 'label' => 'Diagnóstico']);
+                        ?>
                     </div>
                     <!-- /.form group -->
                     <div class="form-group">
-                        <?php echo $this->Form->control('diagnostico_id', ['options' => $diagnosticos, 'empty' => true,
-						'class'=>'form-control select2']); ?>
-
+                        <?php echo $this->Form->control('tratamento', ['label' => 'Tratamento']); ?>                        
                     </div>
                     <!-- /.form group -->
                 </div>
@@ -110,16 +124,16 @@
                 <div class="box-body">
                     <!-- Date -->
                     <div class="form-group">
-                        <?php echo $this->Form->control('tratamento'); ?>
+                        <?php echo $this->Form->control('svacinacao', ['label' => 'Situação Vacinação']); ?>
                     </div>
                     <!--form-->
 
                     <div class="form-group">
-                        <?php echo $this->Form->control('svacinacao'); ?>
+                        <?php echo $this->Form->control('obs', ['label' => 'Observações']); ?>
                     </div>
                     <!--form-->
                     <div class="form-group">
-                        <?php echo $this->Form->control('obs'); ?>
+                        <?php echo $this->Form->control('contador', ['label' => 'Contador']); ?>
                     </div>
                     <!--form-->
                 </div>
@@ -133,7 +147,6 @@
     <?php echo $this->Form->submit(__('Salvar'), ['class' => 'btn btn-primary']); ?>
     <?php echo $this->Form->end(); ?>
 </section>
-
 
 <!-- daterange picker -->
 <?php echo $this->Html->css('AdminLTE./bower_components/bootstrap-daterangepicker/daterangepicker', ['block' => 'css']); ?>
@@ -165,14 +178,7 @@
 <?php echo $this->Html->script('AdminLTE./plugins/timepicker/bootstrap-timepicker.min', ['block' => 'script']); ?>
 <!-- iCheck 1.0.1 -->
 <?php echo $this->Html->script('AdminLTE./plugins/iCheck/icheck.min', ['block' => 'script']); ?>
-<!-- FastClick -->
-<?php echo $this->Html->script('AdminLTE./bower_components/fastclick/lib/fastclick', ['block' => 'script']); ?>
-<!-- AdminLTE App -->
-<?php echo $this->Html->script('AdminLTE./dist/js/adminlte.min', ['block' => 'script']); ?>
-<!-- AdminLTE for demo purposes -->
-<?php echo $this->Html->script('AdminLTE./dist/js/demo', ['block' => 'script']); ?>
 
-<!-- Page script -->
 <?php $this->start('scriptBottom'); ?>
 <script>
     $(function () {

@@ -39,6 +39,14 @@ class CampanhasController extends AppController {
             'contain' => ['Unidades', 'Users']
         ]);
 
+//configurando o nosso plugin pdf dentro da nossa function view
+        $this->viewBuilder()->options([
+            'pdfConfig' => [
+                'orientation' => 'landscape',
+                'filename' => 'Campanha_' . $id . '.pdf'
+            ]
+        ]);
+
         $this->set('campanha', $campanha);
     }
 
@@ -115,17 +123,17 @@ class CampanhasController extends AppController {
      * @throws \Cake\Network\Exception\NotFoundException When record not found.
      */
     public function export() {
-        
+
         $this->setResponse($this->getResponse()->withDownload('campanhas.csv'));
 
-        $_header = array('ID', 'US', 'Utilizador', 'Descricao', 'Nº de dose', 'Aplicada na US', 'Aplicada por BM',
-            'Aplicada por ACS', 'Interv_idade', 'Mulheres pos parto', 'Comentario','Registado', 'Actualizado');
-        
+        $_header = array('ID', 'US', 'Utilizador', 'Descricao', 'Nº de dose', 'US', 'BM',
+            'ACS', 'Idade', 'MPP', 'Comentario', 'Registado', 'Actualizado');
+
         $data = $this->Campanhas->find('all');
         $_serialize = 'data';
 
         $this->viewBuilder()->setClassName('CsvView.Csv');
-        $this->set(compact( 'data', '_header','_serialize'));
+        $this->set(compact('data', '_header', '_serialize'));
     }
 
 }

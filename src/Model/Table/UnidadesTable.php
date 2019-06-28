@@ -12,6 +12,7 @@ use Cake\Validation\Validator;
  * @property \App\Model\Table\ClassificacaosTable|\Cake\ORM\Association\BelongsTo $Classificacaos
  * @property \App\Model\Table\DistritosTable|\Cake\ORM\Association\BelongsTo $Distritos
  * @property \App\Model\Table\CampanhasTable|\Cake\ORM\Association\HasMany $Campanhas
+ * @property \App\Model\Table\PartosTable|\Cake\ORM\Association\HasMany $Partos
  * @property \App\Model\Table\TratamentosTable|\Cake\ORM\Association\HasMany $Tratamentos
  *
  * @method \App\Model\Entity\Unidade get($primaryKey, $options = [])
@@ -52,6 +53,9 @@ class UnidadesTable extends Table
             'joinType' => 'INNER'
         ]);
         $this->hasMany('Campanhas', [
+            'foreignKey' => 'unidade_id'
+        ]);
+        $this->hasMany('Partos', [
             'foreignKey' => 'unidade_id'
         ]);
         $this->hasMany('Tratamentos', [

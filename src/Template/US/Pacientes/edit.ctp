@@ -12,6 +12,7 @@
             <?php echo __(''); ?>
             <i class="fa fa-edit"></i>
         </small>
+
     </h1>
     <ol class="breadcrumb">
         <li><a href="<?php echo $this->Url->build(['action' => 'index']); ?>"><i class="fa fa-dashboard"></i> <?php echo __('Home'); ?></a></li>
@@ -34,7 +35,7 @@
 
                     <div class="col-md-6">
                         <div class="form-group has-feedback">
-                            <?php echo $this->Form->control('name', ['label' => 'Nome completo', 'placeholder' => 'Nome completo']); ?>
+                            <?php echo $this->Form->control('full_name', ['label' => 'Nome completo', 'placeholder' => 'Nome completo']); ?>
                             <span class="glyphicon glyphicon-user form-control-feedback"></span>
                         </div>
                     </div>

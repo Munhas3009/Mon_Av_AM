@@ -9,6 +9,7 @@ use Cake\Validation\Validator;
 /**
  * Pacientes Model
  *
+ * @property \App\Model\Table\PartosTable|\Cake\ORM\Association\HasMany $Partos
  * @property \App\Model\Table\TratamentosTable|\Cake\ORM\Association\HasMany $Tratamentos
  *
  * @method \App\Model\Entity\Paciente get($primaryKey, $options = [])
@@ -35,11 +36,14 @@ class PacientesTable extends Table
         parent::initialize($config);
 
         $this->setTable('pacientes');
-        $this->setDisplayField('name');
+        $this->setDisplayField('id');
         $this->setPrimaryKey('id');
 
         $this->addBehavior('Timestamp');
 
+        $this->hasMany('Partos', [
+            'foreignKey' => 'paciente_id'
+        ]);
         $this->hasMany('Tratamentos', [
             'foreignKey' => 'paciente_id'
         ]);
@@ -58,9 +62,10 @@ class PacientesTable extends Table
             ->allowEmptyString('id', 'create');
 
         $validator
-            ->scalar('name')
-            ->maxLength('name', 255)
-            ->allowEmptyString('name');
+            ->scalar('full_name')
+            ->maxLength('full_name', 255)
+            ->requirePresence('full_name', 'create')
+            ->allowEmptyString('full_name', false);
 
         $validator
             ->scalar('area_trabalho')
@@ -83,7 +88,8 @@ class PacientesTable extends Table
 
         $validator
             ->integer('contacto')
-            ->allowEmptyString('contacto')
+            ->requirePresence('contacto', 'create')
+            ->allowEmptyString('contacto', false)
             ->add('contacto', 'unique', ['rule' => 'validateUnique', 'provider' => 'table']);
 
         return $validator;

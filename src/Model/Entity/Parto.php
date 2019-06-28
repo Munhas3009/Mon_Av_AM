@@ -4,29 +4,23 @@ namespace App\Model\Entity;
 use Cake\ORM\Entity;
 
 /**
- * Tratamento Entity
+ * Parto Entity
  *
  * @property int $id
- * @property int $unidade_id
- * @property int $user_id
- * @property int $especialidade_id
- * @property int $paciente_id
- * @property string $estado
- * @property int|null $diagnostico_id
- * @property string|null $tratamento
- * @property string|null $svacinacao
+ * @property int|null $unidade_id
+ * @property int|null $user_id
+ * @property int|null $paciente_id
+ * @property string $tipo
+ * @property float|null $peso
  * @property string|null $obs
- * @property int $contador
  * @property \Cake\I18n\FrozenTime|null $created
  * @property \Cake\I18n\FrozenTime|null $modified
  *
  * @property \App\Model\Entity\Unidade $unidade
  * @property \App\Model\Entity\User $user
- * @property \App\Model\Entity\Especialidade $especialidade
  * @property \App\Model\Entity\Paciente $paciente
- * @property \App\Model\Entity\Diagnostico $diagnostico
  */
-class Tratamento extends Entity
+class Parto extends Entity
 {
     /**
      * Fields that can be mass assigned using newEntity() or patchEntity().
@@ -40,20 +34,14 @@ class Tratamento extends Entity
     protected $_accessible = [
         'unidade_id' => true,
         'user_id' => true,
-        'especialidade_id' => true,
         'paciente_id' => true,
-        'estado' => true,
-        'diagnostico_id' => true,
-        'tratamento' => true,
-        'svacinacao' => true,
+        'tipo' => true,
+        'peso' => true,
         'obs' => true,
-        'contador' => true,
         'created' => true,
         'modified' => true,
         'unidade' => true,
         'user' => true,
-        'especialidade' => true,
-        'paciente' => true,
-        'diagnostico' => true
+        'paciente' => true
     ];
 }

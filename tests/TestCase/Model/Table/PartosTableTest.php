@@ -1,21 +1,21 @@
 <?php
 namespace App\Test\TestCase\Model\Table;
 
-use App\Model\Table\PacientesTable;
+use App\Model\Table\PartosTable;
 use Cake\ORM\TableRegistry;
 use Cake\TestSuite\TestCase;
 
 /**
- * App\Model\Table\PacientesTable Test Case
+ * App\Model\Table\PartosTable Test Case
  */
-class PacientesTableTest extends TestCase
+class PartosTableTest extends TestCase
 {
     /**
      * Test subject
      *
-     * @var \App\Model\Table\PacientesTable
+     * @var \App\Model\Table\PartosTable
      */
-    public $Pacientes;
+    public $Partos;
 
     /**
      * Fixtures
@@ -23,9 +23,10 @@ class PacientesTableTest extends TestCase
      * @var array
      */
     public $fixtures = [
-        'app.Pacientes',
         'app.Partos',
-        'app.Tratamentos'
+        'app.Unidades',
+        'app.Users',
+        'app.Pacientes'
     ];
 
     /**
@@ -36,8 +37,8 @@ class PacientesTableTest extends TestCase
     public function setUp()
     {
         parent::setUp();
-        $config = TableRegistry::getTableLocator()->exists('Pacientes') ? [] : ['className' => PacientesTable::class];
-        $this->Pacientes = TableRegistry::getTableLocator()->get('Pacientes', $config);
+        $config = TableRegistry::getTableLocator()->exists('Partos') ? [] : ['className' => PartosTable::class];
+        $this->Partos = TableRegistry::getTableLocator()->get('Partos', $config);
     }
 
     /**
@@ -47,7 +48,7 @@ class PacientesTableTest extends TestCase
      */
     public function tearDown()
     {
-        unset($this->Pacientes);
+        unset($this->Partos);
 
         parent::tearDown();
     }

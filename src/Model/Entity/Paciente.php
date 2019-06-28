@@ -7,15 +7,16 @@ use Cake\ORM\Entity;
  * Paciente Entity
  *
  * @property int $id
- * @property string|null $name
+ * @property string $full_name
  * @property string|null $area_trabalho
  * @property string|null $residencia
  * @property string|null $genero
  * @property int|null $idade
- * @property int|null $contacto
+ * @property int $contacto
  * @property \Cake\I18n\FrozenTime|null $created
  * @property \Cake\I18n\FrozenTime|null $modified
  *
+ * @property \App\Model\Entity\Parto[] $partos
  * @property \App\Model\Entity\Tratamento[] $tratamentos
  */
 class Paciente extends Entity
@@ -30,7 +31,7 @@ class Paciente extends Entity
      * @var array
      */
     protected $_accessible = [
-        'name' => true,
+        'full_name' => true,
         'area_trabalho' => true,
         'residencia' => true,
         'genero' => true,
@@ -38,6 +39,7 @@ class Paciente extends Entity
         'contacto' => true,
         'created' => true,
         'modified' => true,
+        'partos' => true,
         'tratamentos' => true
     ];
 }

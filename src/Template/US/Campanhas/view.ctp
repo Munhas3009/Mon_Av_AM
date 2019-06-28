@@ -8,6 +8,9 @@
     </h1>
     <ol class="breadcrumb">
         <li><a href="<?php echo $this->Url->build(['action' => 'index']); ?>"><i class="fa fa-dashboard"></i> <?php echo __('Home'); ?></a></li>
+        <li class="active"><i class="fa fa-info"></i></li>
+        <li><a href="<?php echo $this->Url->build(['action' => 'view', $campanha->id, '_ext' => 'pdf']); ?>"><i class="fa fa-download"></i><?php echo __('Pdf'); ?></a></li>
+
     </ol>
 </section>
 

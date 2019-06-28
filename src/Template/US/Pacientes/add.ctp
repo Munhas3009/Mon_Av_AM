@@ -35,7 +35,7 @@
 
                     <div class="col-md-6">
                         <div class="form-group has-feedback">
-                            <?php echo $this->Form->control('name', ['label' => 'Nome completo', 'placeholder' => 'Nome completo']); ?>
+                            <?php echo $this->Form->control('full_name', ['label' => 'Nome completo', 'placeholder' => 'Nome completo']); ?>
                             <span class="glyphicon glyphicon-user form-control-feedback"></span>
                         </div>
                     </div>
