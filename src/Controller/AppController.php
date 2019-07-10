@@ -69,7 +69,7 @@ class AppController extends Controller {
                 'action' => 'login'
             ],
             'storage' => 'Session',
-            'authError' => 'Dados Inválidos'
+            'authError' => 'Você não tem permissão para acessar esta área!'
         ]);
 
         /*

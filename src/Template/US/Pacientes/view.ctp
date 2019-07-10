@@ -62,35 +62,37 @@
                 <!-- /.box-header -->
                 <div class="box-body">
                     <?php if (!empty($paciente->partos)): ?>
-                        <table class="table table-hover">
+                        <table id="example2" class="table table-bordered table-hover">
+                        <thead>
                             <tr>
-                                <th scope="col"><?= __('Id') ?></th>
-                                <th scope="col"><?= __('Unidade Id') ?></th>
-                                <th scope="col"><?= __('User Id') ?></th>
-                                <th scope="col"><?= __('Paciente Id') ?></th>
-                                <th scope="col"><?= __('Tipo') ?></th>
-                                <th scope="col"><?= __('Peso') ?></th>
-                                <th scope="col"><?= __('Obs') ?></th>
-                                <th scope="col"><?= __('Created') ?></th>
-                                <th scope="col"><?= __('Modified') ?></th>
-                                <th scope="col" class="actions text-center"><?= __('Actions') ?></th>
+                                <th scope="col" class="actions text-center"><?= __('Id') ?></th>
+                                <th scope="col" class="actions text-center"><?= __('US') ?></th>
+                                <th scope="col" class="actions text-center"><?= __('Utiliz') ?></th>
+                                <!--<th scope="col"><?= __('Paciente Id') ?></th>-->
+                                <th scope="col" class="actions text-center"><?= __('Tipo') ?></th>
+                                <th scope="col" class="actions text-center"><?= __('Peso') ?></th>
+                                <!--<th scope="col"><?= __('Obs') ?></th>-->
+                                <th scope="col" class="actions text-center"><?= __('Registado') ?></th>
+                                <th scope="col" class="actions text-center"><?= __('Actualizado') ?></th>
+                                <!--<th scope="col" class="actions text-center"><?= __('Actions') ?></th>-->
                             </tr>
+                        </thead>
                             <?php foreach ($paciente->partos as $partos): ?>
                                 <tr>
                                     <td><?= h($partos->id) ?></td>
                                     <td><?= h($partos->unidade_id) ?></td>
                                     <td><?= h($partos->user_id) ?></td>
-                                    <td><?= h($partos->paciente_id) ?></td>
+                                    <!--<td><?= h($partos->paciente_id) ?></td>-->
                                     <td><?= h($partos->tipo) ?></td>
                                     <td><?= h($partos->peso) ?></td>
-                                    <td><?= h($partos->obs) ?></td>
-                                    <td><?= h($partos->created) ?></td>
-                                    <td><?= h($partos->modified) ?></td>
-                                    <td class="actions text-right">
+                                    <!--<td><?= h($partos->obs) ?></td>-->
+                                    <td class="actions text-center"><?= h($partos->created) ?></td>
+                                    <td class="actions text-center"><?= h($partos->modified) ?></td>
+                                    <!--<td class="actions text-right">
                                         <?= $this->Html->link(__('View'), ['controller' => 'Partos', 'action' => 'view', $partos->id], ['class' => 'btn btn-info btn-xs']) ?>
                                         <?= $this->Html->link(__('Edit'), ['controller' => 'Partos', 'action' => 'edit', $partos->id], ['class' => 'btn btn-warning btn-xs']) ?>
                                         <?= $this->Form->postLink(__('Delete'), ['controller' => 'Partos', 'action' => 'delete', $partos->id], ['confirm' => __('Are you sure you want to delete # {0}?', $partos->id), 'class' => 'btn btn-danger btn-xs']) ?>
-                                    </td>
+                                    </td>-->
                                 </tr>
                             <?php endforeach; ?>
                         </table>
@@ -159,3 +161,26 @@
         </div>
     </div>
 </section>
+
+<!-- DataTables -->
+<?php echo $this->Html->css('AdminLTE./bower_components/datatables.net-bs/css/dataTables.bootstrap.min', ['block' => 'css']); ?>
+
+<!-- DataTables -->
+<?php echo $this->Html->script('AdminLTE./bower_components/datatables.net/js/jquery.dataTables.min', ['block' => 'script']); ?>
+<?php echo $this->Html->script('AdminLTE./bower_components/datatables.net-bs/js/dataTables.bootstrap.min', ['block' => 'script']); ?>
+
+<?php $this->start('scriptBottom'); ?>
+<script>
+    $(function () {
+        $('#example1').DataTable()
+        $('#example2').DataTable({
+            'paging': true,
+            'lengthChange': false,
+            'searching': true,
+            'ordering': true,
+            'info': true,
+            'autoWidth': false
+        })
+    })
+</script>
+<?php $this->end(); ?>

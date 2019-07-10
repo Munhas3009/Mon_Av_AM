@@ -9,10 +9,7 @@
     <ol class="breadcrumb">
         <li><a href="<?php echo $this->Url->build(['action' => 'index']); ?>"><i class="fa fa-dashboard"></i> <?php echo __('Home'); ?></a></li>
         <li class="active"><i class="fa fa-info"></i></li>
-          <li><a href="<?php echo $this->Url->build(['action' => 'viewCampanha', $unidade->id]); ?>"><i class="fa fa-thermometer-2"></i><?php echo __('Campanhas'); ?></a></li>
-              <li><a href="<?php echo $this->Url->build(['action' => 'viewTratamento', $unidade->id]); ?>"><i class="fa fa-heartbeat"></i><?php echo __('Consultas'); ?></a></li>
-                  <li><a href="<?php echo $this->Url->build(['action' => 'viewParto', $unidade->id]); ?>"><i class="fa fa-child"></i><?php echo __('Partos'); ?></a></li>
-        <li><a href="<?php echo $this->Url->build(['action' => 'view', $unidade->id, '_ext' => 'pdf']); ?>"><i class="fa fa-download"></i><?php echo __('Pdf'); ?></a></li>
+        <li><a href="<?php echo $this->Url->build(['action' => 'viewParto', $unidade->id, '_ext' => 'pdf']); ?>"><i class="fa fa-download"></i><?php echo __('Pdf'); ?></a></li>
 
     </ol>
 </section>
@@ -46,14 +43,6 @@
                         <dt scope="row"><?= __('Distrito') ?></dt>
                         <dd><?= $unidade->has('distrito') ? $this->Html->link($unidade->distrito->name, ['controller' => 'Distritos', 'action' => 'view', $unidade->distrito->id]) : '' ?></dd>
 
-                        <dt scope="row"><?= __('Número de Camas') ?></dt>
-                        <dd><?= $this->Number->format($unidade->numero_camas) ?></dd>
-                        <dt scope="row"><?= __('Data da Fundação') ?></dt>
-                        <dd><?= h($unidade->data_fundacao) ?></dd>
-                        <dt scope="row"><?= __('Registado') ?></dt>
-                        <dd><?= h($unidade->created) ?></dd>
-                        <dt scope="row"><?= __('Actualizado') ?></dt>
-                        <dd><?= h($unidade->modified) ?></dd>
                     </dl>
                 </div>
             </div>
@@ -74,21 +63,56 @@
             </div>
         </div>
     </div>
+
     <div class="row">
         <div class="col-md-12">
             <div class="box box-solid">
                 <div class="box-header with-border">
-                    <i class="fa fa-text-width"></i>
-                    <h3 class="box-title"><?= __('Comentários') ?></h3>
+                    <i class="fa fa-share-alt"></i>
+                    <h3 class="box-title"><?= __('Partos') ?></h3>
                 </div>
                 <!-- /.box-header -->
                 <div class="box-body">
-                    <?= $this->Text->autoParagraph($unidade->comentarios); ?>
+                    <?php if (!empty($unidade->partos)): ?>
+                        <table id="example1" class="table table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col"><?= __('Id') ?></th>
+    <!--                                <th scope="col" class="actions text-center"><?= __('Unidade Id') ?></th>
+                                    <th scope="col" class="actions text-center"><?= __('User Id') ?></th>
+                                    <th scope="col" class="actions text-center"><?= __('Paciente Id') ?></th>-->
+                                    <th scope="col" class="actions text-center"><?= __('Tipo') ?></th>
+                                    <th scope="col" class="actions text-center"><?= __('Peso') ?></th>
+                                    <th scope="col" class="actions text-center"><?= __('Observações') ?></th>
+                                    <th scope="col" class="actions text-center"><?= __('Registado') ?></th>
+                                    <th scope="col" class="actions text-center"><?= __('Actualizado') ?></th>
+                                    <!--<th scope="col" class="actions text-center"><?= __('Actions') ?></th>-->
+                                </tr>
+                            </thead>
+                            <?php foreach ($unidade->partos as $partos): ?>
+                                <tr>
+                                    <td><?= h($partos->id) ?></td>
+        <!--                                    <td><?= h($partos->unidade_id) ?></td>
+                                    <td><?= h($partos->user_id) ?></td>
+                                    <td><?= h($partos->paciente_id) ?></td>-->
+                                    <td><?= h($partos->tipo) ?></td>
+                                    <td><?= h($partos->peso) ?></td>
+                                    <td><?= h($partos->obs) ?></td>
+                                    <td><?= h($partos->created) ?></td>
+                                    <td><?= h($partos->modified) ?></td>
+        <!--                                    <td class="actions text-right">
+                                    <?= $this->Html->link(__('View'), ['controller' => 'Partos', 'action' => 'view', $partos->id], ['class' => 'btn btn-info btn-xs']) ?>
+                                    <?= $this->Html->link(__('Edit'), ['controller' => 'Partos', 'action' => 'edit', $partos->id], ['class' => 'btn btn-warning btn-xs']) ?>
+                                    <?= $this->Form->postLink(__('Delete'), ['controller' => 'Partos', 'action' => 'delete', $partos->id], ['confirm' => __('Are you sure you want to delete # {0}?', $partos->id), 'class' => 'btn btn-danger btn-xs']) ?>
+                                    </td>-->
+                                </tr>
+                            <?php endforeach; ?>
+                        </table>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>
-    </div>    
-
+    </div>
 </section>
 
 <!-- DataTables -->
@@ -109,7 +133,7 @@
             'searching': true,
             'ordering': true,
             'info': true,
-            'autoWidth': false
+            'autoWidth': true
         })
     })
 </script>

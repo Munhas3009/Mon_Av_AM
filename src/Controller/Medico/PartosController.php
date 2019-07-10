@@ -55,11 +55,11 @@ class PartosController extends AppController
         if ($this->request->is('post')) {
             $parto = $this->Partos->patchEntity($parto, $this->request->getData());
             if ($this->Partos->save($parto)) {
-                $this->Flash->success(__('The {0} has been saved.', 'Parto'));
+                $this->Flash->success(__('O {0} foi registado com sucesso.', 'Parto'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The {0} could not be saved. Please, try again.', 'Parto'));
+            $this->Flash->error(__('O {0} não foi registado. Por favor, tente novamente.', 'Parto'));
         }
         $unidades = $this->Partos->Unidades->find('list', ['limit' => 200]);
         $users = $this->Partos->Users->find('list', ['limit' => 200]);
@@ -83,11 +83,11 @@ class PartosController extends AppController
         if ($this->request->is(['patch', 'post', 'put'])) {
             $parto = $this->Partos->patchEntity($parto, $this->request->getData());
             if ($this->Partos->save($parto)) {
-                $this->Flash->success(__('The {0} has been saved.', 'Parto'));
+                $this->Flash->success(__('O {0} foi actualizado com sucesso.', 'Parto'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The {0} could not be saved. Please, try again.', 'Parto'));
+            $this->Flash->error(__('O {0} não foi actualizado. Por favor, tente novamente.', 'Parto'));
         }
         $unidades = $this->Partos->Unidades->find('list', ['limit' => 200]);
         $users = $this->Partos->Users->find('list', ['limit' => 200]);
@@ -108,9 +108,9 @@ class PartosController extends AppController
         $this->request->allowMethod(['post', 'delete']);
         $parto = $this->Partos->get($id);
         if ($this->Partos->delete($parto)) {
-            $this->Flash->success(__('The {0} has been deleted.', 'Parto'));
+            $this->Flash->success(__('O {0} foi removido.', 'Parto'));
         } else {
-            $this->Flash->error(__('The {0} could not be deleted. Please, try again.', 'Parto'));
+            $this->Flash->error(__('O {0} não foi removido. Por favor, tente novamente.', 'Parto'));
         }
 
         return $this->redirect(['action' => 'index']);

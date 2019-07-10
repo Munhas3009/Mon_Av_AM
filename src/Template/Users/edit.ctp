@@ -70,18 +70,18 @@
 
                     <div class="col-md-6">
                         <div class="form-group has-feedback">             
-                            <?php echo $this->Form->input('confirm_password', ['type' => 'password', 'label' => false, 'placeholder' => 'Confirmar a senha']); ?>
+                            <?php echo $this->Form->input('password_confirm', ['type' => 'password', 'label' => false, 'placeholder' => 'Confirmar a senha']); ?>
                             <span class="glyphicon glyphicon-lock form-control-feedback"></span>
                         </div>
                     </div>
 
 
-                    <div class="col-md-6">
+<!--                    <div class="col-md-6">
                         <div class="form-group has-feedback">
                             <?php echo $this->Form->control('passkey', ['label' => false, 'placeholder' => 'Palavra token']); ?>
                             <span class="glyphicon glyphicon-lock form-control-feedback"></span>
                         </div>
-                    </div>
+                    </div>-->
 
 
                     <div class="col-md-6">
@@ -99,9 +99,9 @@
                     <div class="col-md-6">
                         <div class="form-group has-feedback">
                             <?php
-                            echo $this->Form->control('role_id', ['options' => $roles, 'empty' => true, 'placeholdr' => 'Grupo']);
+                            echo $this->Form->control('role_id', ['options' => $roles, 'empty' => true, 'label' => false, 'placeholdr' => 'Grupo']);
                             ?>
-                            <span class="glyphicon glyphicon-list-alt form-control-feedback"></span>
+                            <span class="glyphicon glyphicon-users form-control-feedback"></span>
                         </div>
                     </div>
                 </div>

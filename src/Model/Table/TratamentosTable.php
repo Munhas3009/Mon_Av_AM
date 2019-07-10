@@ -123,4 +123,12 @@ class TratamentosTable extends Table
 
         return $rules;
     }
+
+
+
+public function isOwnedBy($tratamentoId, $userId)
+{
+return $this->exists(['id' => $tratamentoId, 'user_id' => $userId]);
+}
+
 }

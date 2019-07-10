@@ -29,7 +29,7 @@
                                 <td><?= h($user->name) ?></td>
                                 <td><?= h($user->apelido) ?></td>
                                 <td><?= h($user->email) ?></td>
-                                <td>
+                                <td class="actions text-center">
                                     <?=
                                     $this->Html->image('../webroot/uploads/users' . $user->photo_dir . '/' . $user->photo
                                             , ['width' => 50, 'height' => 50, 'class' => 'img-circle', 'alt' => 'User Image', 'fullBase' => true]);

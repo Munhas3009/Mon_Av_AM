@@ -4,14 +4,14 @@
 
     <li class="treeview">
         <a href="#">
-            <i class="fa fa-medkit" aria-hidden="true"></i> <span> Tratamento </span>
+            <i class="fa fa-medkit" aria-hidden="true"></i> <span> Consulta </span>
             <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
             </span>
         </a>
         <ul class="treeview-menu">
             <li><a href="<?php echo $this->Url->build('/medico/tratamentos/add'); ?>"><i class="fa fa-circle-o"></i> Registar </a></li>
-            <li><a href="<?php echo $this->Url->build('/medico/tratamentos'); ?>"><i class="fa fa-circle-o"></i> Todos </a></li>
+            <li><a href="<?php echo $this->Url->build('/medico/tratamentos'); ?>"><i class="fa fa-circle-o"></i> Todas </a></li>
 
         </ul>
     </li>

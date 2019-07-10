@@ -30,10 +30,10 @@
                         <dt scope="row"><?= __('Nome do distrito') ?></dt>
                         <dd><?= h($distrito->name) ?></dd>
 
-                        <dt scope="row"><?= __('Criado') ?></dt>
+                        <!-- <dt scope="row"><?= __('Criado') ?></dt>
                         <dd><?= h($distrito->created) ?></dd>
                         <dt scope="row"><?= __('Actualizado') ?></dt>
-                        <dd><?= h($distrito->modified) ?></dd>
+                        <dd><?= h($distrito->modified) ?></dd> -->
                     </dl>
                 </div>
             </div>
@@ -79,16 +79,16 @@
                                 <tr>
                                     <th scope="col"><?= __('Id') ?></th>
                                     <th scope="col"><?= __('Nome_da_US') ?></th>
-                                    <th scope="col"><?= __('Slogan') ?></th>
+                                    <!-- <th scope="col"><?= __('Slogan') ?></th> -->
                                     <th scope="col"><?= __('NUIT') ?></th>
                                     <th scope="col"><?= __('Correio electrónico') ?></th>
                                     <th scope="col"><?= __('Data_fundação') ?></th>
                                     <th scope="col"><?= __('Classif') ?></th>
                                     <!--<th scope="col"><?= __('Id do distrito') ?></th>-->
                                     <th scope="col"><?= __('Nº_camas') ?></th>
-                                    <th scope="col"><?= __('Endereço') ?></th>
-                                    <th scope="col"><?= __('Comentários') ?></th>
-                                    <th scope="col"><?= __('Criado') ?></th>
+                                    <!-- <th scope="col"><?= __('Endereço') ?></th> -->
+                                    <!-- <th scope="col"><?= __('Comentários') ?></th> -->
+                                    <th scope="col"><?= __('Registado') ?></th>
                                     <th scope="col"><?= __('Actualizado') ?></th>
                                     <th scope="col" class="actions text-center"><?= __('Acções') ?></th>
                                 </tr>
@@ -97,15 +97,15 @@
                                     <tr>
                                         <td><?= h($unidades->id) ?></td>
                                         <td><?= h($unidades->name) ?></td>
-                                        <td><?= h($unidades->slogan) ?></td>
+                                        <!-- <td><?= h($unidades->slogan) ?></td> -->
                                         <td><?= h($unidades->nuit) ?></td>
                                         <td><?= h($unidades->email) ?></td>
                                         <td><?= h($unidades->data_fundacao) ?></td>
                                         <td><?= h($unidades->classificacao_id) ?></td>
                                         <!--<td><?= h($unidades->distrito_id) ?></td>-->
                                         <td><?= h($unidades->numero_camas) ?></td>
-                                        <td><?= h($unidades->endereco) ?></td>
-                                        <td><?= h($unidades->comentarios) ?></td>
+                                        <!-- <td><?= h($unidades->endereco) ?></td> -->
+                                        <!-- <td><?= h($unidades->comentarios) ?></td> -->
                                         <td><?= h($unidades->created) ?></td>
                                         <td><?= h($unidades->modified) ?></td>
                                         <td class="actions text-right">

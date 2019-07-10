@@ -52,11 +52,11 @@ class PacientesController extends AppController
         if ($this->request->is('post')) {
             $paciente = $this->Pacientes->patchEntity($paciente, $this->request->getData());
             if ($this->Pacientes->save($paciente)) {
-                $this->Flash->success(__('The {0} has been saved.', 'Paciente'));
+                $this->Flash->success(__('O {0} foi registado com sucesso.', 'Paciente'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The {0} could not be saved. Please, try again.', 'Paciente'));
+            $this->Flash->error(__('O {0} não foi registado. Por favor, tente novamente.', 'Paciente'));
         }
         $this->set(compact('paciente'));
     }
@@ -77,11 +77,11 @@ class PacientesController extends AppController
         if ($this->request->is(['patch', 'post', 'put'])) {
             $paciente = $this->Pacientes->patchEntity($paciente, $this->request->getData());
             if ($this->Pacientes->save($paciente)) {
-                $this->Flash->success(__('The {0} has been saved.', 'Paciente'));
+                $this->Flash->success(__('O {0} foi actualizado com sucesso.', 'Paciente'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The {0} could not be saved. Please, try again.', 'Paciente'));
+            $this->Flash->error(__('O {0} não foi actualizado. Por favor, tente novamente.', 'Paciente'));
         }
         $this->set(compact('paciente'));
     }
@@ -99,9 +99,9 @@ class PacientesController extends AppController
         $this->request->allowMethod(['post', 'delete']);
         $paciente = $this->Pacientes->get($id);
         if ($this->Pacientes->delete($paciente)) {
-            $this->Flash->success(__('The {0} has been deleted.', 'Paciente'));
+            $this->Flash->success(__('O {0} foi removido.', 'Paciente'));
         } else {
-            $this->Flash->error(__('The {0} could not be deleted. Please, try again.', 'Paciente'));
+            $this->Flash->error(__('O {0} não foi removido. Por favor, tente novamente.', 'Paciente'));
         }
 
         return $this->redirect(['action' => 'index']);

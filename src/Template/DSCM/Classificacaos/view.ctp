@@ -71,7 +71,7 @@
                                     <tr>
                                         <th scope="col" class="actions text-center"><?= __('Id') ?></th>
                                         <th scope="col" class="actions text-center"><?= __('Nome da US') ?></th>
-                                        <th scope="col" class="actions text-center"><?= __('Slogan') ?></th>
+                                        <!--<th scope="col" class="actions text-center"><?= __('Slogan') ?></th>-->
                                         <th scope="col" class="actions text-center"><?= __('NUIT') ?></th>
                                         <th scope="col" class="actions text-center"><?= __('Correio') ?></th>
                                         <th scope="col" class="actions text-center"><?= __('D_Fundação') ?></th>
@@ -79,7 +79,7 @@
                                         <th scope="col" class="actions text-center"><?= __('Distrito') ?></th>
                                         <th scope="col" class="actions text-center"><?= __('Nº de Camas') ?></th>
                                         <th scope="col" class="actions text-center"><?= __('Endereço') ?></th>
-                                        <th scope="col" class="actions text-center"><?= __('Comentários') ?></th>
+                                        <!--<th scope="col" class="actions text-center"><?= __('Comentários') ?></th>-->
                                         <th scope="col" class="actions text-center"><?= __('Registado') ?></th>
                                         <th scope="col" class="actions text-center"><?= __('Actualizado') ?></th>
                                         <th scope="col" class="actions text-center"><?= __('Acções ') ?></th>
@@ -89,7 +89,7 @@
                                     <tr>
                                         <td><?= h($unidades->id) ?></td>
                                         <td><?= h($unidades->name) ?></td>
-                                        <td><?= h($unidades->slogan) ?></td>
+                                        <!--<td><?= h($unidades->slogan) ?></td>-->
                                         <td><?= h($unidades->nuit) ?></td>
                                         <td><?= h($unidades->email) ?></td>
                                         <td><?= h($unidades->data_fundacao) ?></td>
@@ -97,7 +97,7 @@
                                         <td><?= h($unidades->distrito_id) ?></td>
                                         <td><?= h($unidades->numero_camas) ?></td>
                                         <td><?= h($unidades->endereco) ?></td>
-                                        <td><?= h($unidades->comentarios) ?></td>
+                                        <!--<td><?= h($unidades->comentarios) ?></td>-->
                                         <td><?= h($unidades->created) ?></td>
                                         <td><?= h($unidades->modified) ?></td>
                                         <td class="actions text-center">

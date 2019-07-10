@@ -20,12 +20,12 @@
                 <div class="inner">
                     <h3>150</h3>
 
-                    <p>Tratamentos</p>
+                    <p>Consultas</p>
                 </div>
                 <div class="icon">
                     <i class="ion ion-medkit"></i>
                 </div>
-                <a href="<?php echo $this->Url->build('/medico/tratamentos'); ?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                <a href="<?php echo $this->Url->build('/medico/tratamentos'); ?>" class="small-box-footer">Mais info <i class="fa fa-arrow-circle-right"></i></a>
             </div>
         </div>
         <!-- ./col -->
@@ -40,7 +40,7 @@
                 <div class="icon">
                     <i class="ion ion-ios-people"></i>
                 </div>
-                <a href="<?php echo $this->Url->build('/us/pacientes'); ?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                <a href="<?php echo $this->Url->build('/us/pacientes'); ?>" class="small-box-footer">Mais info <i class="fa fa-arrow-circle-right"></i></a>
             </div>
         </div>
         <!-- ./col -->
@@ -51,12 +51,12 @@
                    
                     <h3>8</h3>
 
-                    <p>US Registadas</p>
+                    <p>Unidades Sanitárias</p>
                 </div>
                 <div class="icon">
                     <i class="ion ion-ios-home"></i>
                 </div>
-                <a href="<?php echo $this->Url->build('/dscm/unidades'); ?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                <a href="<?php echo $this->Url->build('/dscm/unidades'); ?>" class="small-box-footer">Mais info <i class="fa fa-arrow-circle-right"></i></a>
             </div>
         </div>
         <!-- ./col -->
@@ -75,7 +75,7 @@
                 <div class="icon">
                     <i class="ion ion-person-add"></i>
                 </div>
-                <a href="<?php echo $this->Url->build('/users'); ?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                <a href="<?php echo $this->Url->build('/users'); ?>" class="small-box-footer">Mais info <i class="fa fa-arrow-circle-right"></i></a>
             </div>
         </div>
         <!-- ./col -->

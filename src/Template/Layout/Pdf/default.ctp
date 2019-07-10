@@ -15,14 +15,12 @@
     </head>
 
     <body>
-
         <header class="row">
-            <div class="header-image" align="center"><?= $this->Html->image('moz.png', ['fullBase' => true, 'width' => 65]) ?></div>
-
-            <div class="header-title" align="center">
-                <h3><b>República de Moçambique</b></h3>
-                <h4>Ministério da Saúde</h4>
-
+            <div class="header-image" align="center"><?= $this->Html->image('moz.png', ['fullBase' => true, 'width' => 60]) ?></div>           
+            <div class="header-title" align="center">                
+                <p align="center"><h6>República de Moçambique</h6></p>
+                <p align="center"><h6>Ministério da Saúde</h6></p>
+                <p align="center"><h5><b>Direcção de Saúde da Cidade de Maputo</b></h5></p>
             </div>
         </header>
 
@@ -40,7 +38,7 @@
                     ?></b>
                 <small><?php echo $this->request->session()->read('Auth.User.Role.name'); ?></small></p>
             
-            <p align="left">Data Hora: <b></b></p>
+            <p align="left">Data Hora: <b> <?php echo(strftime("%m/%d/%Y %H:%M")); ?> </b></p>
         </div>
 
         <div class="row" align="center"> 

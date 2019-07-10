@@ -47,7 +47,7 @@ class UsersController extends AppController {
                 'filename' => 'Utilizador_' . $id . '.pdf'
             ]
         ]);
-        
+
         $this->set('user', $user);
     }
 
@@ -167,22 +167,12 @@ class UsersController extends AppController {
 
                     return $this->redirect('/us/pacientes');
                 } else {
-                    return $this->redirect($this->Auth->redirectUrl('us/campanhas'));
+                    return $this->redirect(['controller' => 'users', 'action' => 'login']);
                 }
             } else {
-                $this->Flash->error('Dados Invalidos, por favor tente novamente', ['key' => 'auth']);
+                $this->Flash->error('Utilizador ou palavra passe inválido, por favor tente novamente', ['key' => 'auth']);
             }
         }
-
-
-//        if ($this->request->is('post')) {
-//            $user = $this->Auth->identify();
-//            if ($user) {
-//                $this->Auth->setUser($user);
-//                return $this->redirect($this->Auth->redirectUrl());
-//            }
-//            $this->Flash->error('Username ou palavra-passe invalido, tente novamente', ['key' => 'auth']);
-//        }
     }
 
     /**

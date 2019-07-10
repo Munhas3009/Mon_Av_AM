@@ -77,11 +77,11 @@ class EspecialidadesController extends AppController
         if ($this->request->is(['patch', 'post', 'put'])) {
             $especialidade = $this->Especialidades->patchEntity($especialidade, $this->request->getData());
             if ($this->Especialidades->save($especialidade)) {
-                $this->Flash->success(__('A {0} foi actualizado com sucesso.', 'Especialidade'));
+                $this->Flash->success(__('A {0} foi actualizada com sucesso.', 'Especialidade'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('A {0} não foi actualizado. Por favor, tente novamente.', 'Especialidade'));
+            $this->Flash->error(__('A {0} não foi actualizada. Por favor, tente novamente.', 'Especialidade'));
         }
         $this->set(compact('especialidade'));
     }

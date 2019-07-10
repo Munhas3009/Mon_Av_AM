@@ -56,7 +56,7 @@ class RolesController extends AppController
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('O {0} não foi registado. Por favor, tentar de novo.', 'Grupo'));
+            $this->Flash->error(__('O {0} não foi registado. Por favor, tente de novamente.', 'Grupo'));
         }
         $this->set(compact('role'));
     }
@@ -81,7 +81,7 @@ class RolesController extends AppController
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('O {0} não foi actualizado. Por favor, tentar de novo.', 'Grupo'));
+            $this->Flash->error(__('O {0} não foi actualizado. Por favor, tente de novamente.', 'Grupo'));
         }
         $this->set(compact('role'));
     }
@@ -101,9 +101,18 @@ class RolesController extends AppController
         if ($this->Roles->delete($role)) {
             $this->Flash->success(__('O {0} foi removido.', 'Grupo'));
         } else {
-            $this->Flash->error(__('O {0} não pode ser removido. Por favor, tentar de novo.', 'Grupo'));
+            $this->Flash->error(__('O {0} não foi removido. Por favor, tente de novamente.', 'Grupo'));
         }
 
         return $this->redirect(['action' => 'index']);
     }
+
+
+    public function isAuthorized($user) {
+    if (isset($user['role']) && $user['role'] === '1') {
+        return true;
+    }
+    return parent::isAuthorized($user);
+}
+
 }

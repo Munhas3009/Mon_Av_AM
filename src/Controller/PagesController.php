@@ -67,9 +67,4 @@ class PagesController extends AppController {
         }
     }
 
-    public function cakePdfDownload($name = null) {
-        Configure::write('CakePdf.download', true);
-        Configure::write('CakePdf.filename', "MyCustomName.pdf");
-    }
-
 }

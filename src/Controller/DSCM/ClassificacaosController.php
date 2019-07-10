@@ -52,11 +52,11 @@ class ClassificacaosController extends AppController
         if ($this->request->is('post')) {
             $classificacao = $this->Classificacaos->patchEntity($classificacao, $this->request->getData());
             if ($this->Classificacaos->save($classificacao)) {
-                $this->Flash->success(__('The {0} has been saved.', 'Classificacao'));
+                $this->Flash->success(__('A {0} foi registada com sucesso.', 'Classificação'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The {0} could not be saved. Please, try again.', 'Classificacao'));
+            $this->Flash->error(__('A {0} não foi registada. Por favor, tente novamente.', 'Classificação'));
         }
         $this->set(compact('classificacao'));
     }
@@ -77,11 +77,11 @@ class ClassificacaosController extends AppController
         if ($this->request->is(['patch', 'post', 'put'])) {
             $classificacao = $this->Classificacaos->patchEntity($classificacao, $this->request->getData());
             if ($this->Classificacaos->save($classificacao)) {
-                $this->Flash->success(__('The {0} has been saved.', 'Classificacao'));
+                $this->Flash->success(__('A {0} actualizada com sucesso.', 'Classificação'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The {0} could not be saved. Please, try again.', 'Classificacao'));
+            $this->Flash->error(__('A {0} não foi actualizada. Por favor, tente novamente.', 'Classificação'));
         }
         $this->set(compact('classificacao'));
     }
@@ -99,9 +99,9 @@ class ClassificacaosController extends AppController
         $this->request->allowMethod(['post', 'delete']);
         $classificacao = $this->Classificacaos->get($id);
         if ($this->Classificacaos->delete($classificacao)) {
-            $this->Flash->success(__('The {0} has been deleted.', 'Classificacao'));
+            $this->Flash->success(__('A {0} foi removida.', 'Classificação'));
         } else {
-            $this->Flash->error(__('The {0} could not be deleted. Please, try again.', 'Classificacao'));
+            $this->Flash->error(__('A {0} não foi removida. Por favor, tente novamente.', 'Classificação'));
         }
 
         return $this->redirect(['action' => 'index']);

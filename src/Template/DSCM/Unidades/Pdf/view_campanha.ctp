@@ -109,7 +109,7 @@
                                     <td><?= h($tratamentos->especialidade_id) ?></td>                                    
                                     <td><?= h($tratamentos->estado) ?></td>
                                     <td><?= h($tratamentos->diagnostico_id) ?></td>
-                                    <td><?= h($tratamentos->tratamento) ?></td>                                    
+                                    <td><?= h($tratamentos->tratamento) ?></td>                             
 
                                 </tr>
                             <?php endforeach; ?>

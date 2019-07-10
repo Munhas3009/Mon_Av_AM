@@ -38,7 +38,7 @@
                             <tr>
                                 <th scope="col" class="actions text-center"><?= $this->Paginator->sort('id') ?></th>
                                 <th scope="col" class="actions text-center"><?= $this->Paginator->sort('nome_da_US') ?></th>
-                                <th scope="col" class="actions text-center"><?= $this->Paginator->sort('slogan') ?></th>
+                                <!--<th scope="col" class="actions text-center"><?= $this->Paginator->sort('slogan') ?></th>-->
                                 <th scope="col" class="actions text-center"><?= $this->Paginator->sort('NUIT') ?></th>
                                 <th scope="col" class="actions text-center"><?= $this->Paginator->sort('correio') ?></th>
                                 <th scope="col" class="actions text-center"><?= $this->Paginator->sort('fundada') ?></th>
@@ -55,7 +55,7 @@
                                 <tr>
                                     <td><?= $this->Number->format($unidade->id) ?></td>
                                     <td><?= h($unidade->name) ?></td>
-                                    <td><?= h($unidade->slogan) ?></td>
+                                    <!--<td><?= h($unidade->slogan) ?></td>-->
                                     <td><?= h($unidade->nuit) ?></td>
                                     <td><?= h($unidade->email) ?></td>
                                     <td><?= h($unidade->data_fundacao) ?></td>
@@ -101,7 +101,7 @@
             'searching': true,
             'ordering': true,
             'info': true,
-            'autoWidth': false
+            'autoWidth': true
         })
     })
 </script>
