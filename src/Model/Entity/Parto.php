@@ -11,6 +11,7 @@ use Cake\ORM\Entity;
  * @property int|null $user_id
  * @property int|null $paciente_id
  * @property string $tipo
+ * @property string|null $genero
  * @property float|null $peso
  * @property string|null $obs
  * @property \Cake\I18n\FrozenTime|null $created
@@ -36,6 +37,7 @@ class Parto extends Entity
         'user_id' => true,
         'paciente_id' => true,
         'tipo' => true,
+        'genero' => true,
         'peso' => true,
         'obs' => true,
         'created' => true,

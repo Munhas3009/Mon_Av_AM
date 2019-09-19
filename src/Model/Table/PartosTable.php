@@ -72,6 +72,11 @@ class PartosTable extends Table
             ->allowEmptyString('tipo', false);
 
         $validator
+            ->scalar('genero')
+            ->maxLength('genero', 100)
+            ->allowEmptyString('genero');
+
+        $validator
             ->numeric('peso')
             ->allowEmptyString('peso');
 
@@ -98,4 +103,10 @@ class PartosTable extends Table
 
         return $rules;
     }
+
+    public function isOwnedBy($partoId, $userId)
+{
+return $this->exists(['id' => $partoId, 'user_id' => $userId]);
+}
+
 }

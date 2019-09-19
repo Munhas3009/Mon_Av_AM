@@ -152,7 +152,7 @@ class UsersController extends AppController {
             if ($user) {
                 $this->Auth->setUser($user);
 
-                $loggedUser = $this->request->session()->read('Auth.User');
+                $loggedUser = $this->request->getSession()->read('Auth.User');
 
                 if ($loggedUser['role_id'] === 1) {
 

@@ -74,19 +74,25 @@
                 <div class="box-body">
                     <!-- Date -->
                     <div class="form-group">
-                        <?php echo $this->Form->control('tipo', ['label' => 'Tipo']); ?>
+                        <?php echo $this->Form->control('tipo', ['class' => 'form-control select2', 'style' => 'width: 100%;', 'options'=>['empty'=>'', 'Norm'=>'Normal']],['label' => 'Tipo']); ?>
                     </div>
                     <!--form-->
-
+                   
+                            <!-- Date -->
+                    <div class="form-group">
+                            <?php
+                            echo $this->Form->control('genero', ['class' => 'form-control select2', 'style' => 'width: 100%;', 'options' => ['empty' => '', 'Feminino' => 'Feminino', 'Masculino' => 'Masculino']
+                                    ], ['label' => 'Genero']);
+                            ?>
+                            
+                        </div>
+                        <!--form-->
+                   
                     <div class="form-group">
                         <?php echo $this->Form->control('peso', ['label' => 'Peso']); ?>
                     </div>
                     <!--form-->
-
-                    <div class="form-group">
-                        <?php echo $this->Form->control('obs', ['label' => 'Observações']); ?>
-                    </div>
-                    <!--form-->
+                                    
                 </div>
                 <!--box-body-->
             </div>
@@ -96,6 +102,12 @@
         <!-- /.col (right) -->
     </div>
     <!--row-->
+
+<div class="form-group">
+                        <?php echo $this->Form->control('obs', ['type'=>'text','label' => 'Observações']); ?>
+                    </div>
+
+
     <?php echo $this->Form->submit(__('Salvar'), ['class' => 'btn btn-primary']); ?>
     <?php echo $this->Form->end(); ?>
 </section>

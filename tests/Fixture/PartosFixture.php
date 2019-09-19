@@ -20,6 +20,7 @@ class PartosFixture extends TestFixture
         'user_id' => ['type' => 'integer', 'length' => 11, 'unsigned' => false, 'null' => true, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
         'paciente_id' => ['type' => 'integer', 'length' => 11, 'unsigned' => false, 'null' => true, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
         'tipo' => ['type' => 'string', 'length' => 50, 'null' => false, 'default' => null, 'collate' => 'latin1_swedish_ci', 'comment' => '', 'precision' => null, 'fixed' => null],
+        'genero' => ['type' => 'string', 'length' => 100, 'null' => true, 'default' => null, 'collate' => 'latin1_swedish_ci', 'comment' => '', 'precision' => null, 'fixed' => null],
         'peso' => ['type' => 'float', 'length' => null, 'precision' => null, 'unsigned' => false, 'null' => true, 'default' => null, 'comment' => ''],
         'obs' => ['type' => 'string', 'length' => 255, 'null' => true, 'default' => null, 'collate' => 'latin1_swedish_ci', 'comment' => '', 'precision' => null, 'fixed' => null],
         'created' => ['type' => 'datetime', 'length' => null, 'null' => true, 'default' => null, 'comment' => '', 'precision' => null],
@@ -47,10 +48,11 @@ class PartosFixture extends TestFixture
                 'user_id' => 1,
                 'paciente_id' => 1,
                 'tipo' => 'Lorem ipsum dolor sit amet',
+                'genero' => 'Lorem ipsum dolor sit amet',
                 'peso' => 1,
                 'obs' => 'Lorem ipsum dolor sit amet',
-                'created' => '2019-06-24 18:50:01',
-                'modified' => '2019-06-24 18:50:01'
+                'created' => '2019-07-11 07:51:10',
+                'modified' => '2019-07-11 07:51:10'
             ],
         ];
         parent::init();
